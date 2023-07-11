@@ -1,0 +1,15 @@
+@import "./variables";
+@import "./base";
+@import "./utilities";
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 3rem;
+  }
+}
