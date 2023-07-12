@@ -1,0 +1,12 @@
+---
+import "../styles/components/typography.scss";
+
+export interface IProps {
+  tag?: string;
+}
+
+const { tag = "p" } = Astro.props as IProps;
+const Component = tag;
+---
+
+<Component><slot /></Component>

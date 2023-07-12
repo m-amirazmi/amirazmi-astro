@@ -1,0 +1,35 @@
+---
+import Layout from "./Layout.astro";
+import "../styles/pages/docs.scss";
+
+const currentPath = "/docs/components";
+
+export interface Props {
+  title?: string;
+  pageTitle?: string;
+  pageSubtitle?: string;
+}
+
+const {
+  title = "Documentation",
+  pageTitle = "AA.DEV",
+  pageSubtitle = "",
+} = Astro.props as Props;
+---
+
+<Layout title={title}>
+  <main class="docs">
+    <aside>
+      <div class="heading">
+        <h5 class="title">{pageTitle}</h5>
+        <p class="subtitle">{pageSubtitle}</p>
+      </div>
+      <div class="listing">
+        <a href={currentPath + "/typography"}>Typography</a>
+      </div>
+    </aside>
+    <div class="content">
+      <slot />
+    </div>
+  </main>
+</Layout>
