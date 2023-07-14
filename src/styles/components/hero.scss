@@ -25,9 +25,15 @@
         height: 0.3rem;
         background-color: $color-primary;
         position: absolute;
-        bottom: 0.3rem;
+        bottom: 0rem;
         right: -1.8rem;
         @include animate-blinking;
+
+        @include screen-sm {
+          width: 1.2rem;
+          right: -1.4rem;
+          height: 0.2rem;
+        }
       }
     }
   }

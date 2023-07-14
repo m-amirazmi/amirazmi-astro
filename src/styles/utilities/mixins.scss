@@ -176,7 +176,7 @@
 }
 
 @mixin animate-blinking {
-  animation: blinker 0.7s linear infinite;
+  animation: blinker 1s linear infinite;
   @keyframes blinker {
     50% {
       opacity: 0;
