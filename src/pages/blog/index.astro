@@ -1,4 +1,5 @@
 ---
+import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
 import { collectLabels } from "../../utils/helpers";
 
@@ -10,14 +11,14 @@ const labels = collectLabels(posts);
   <section>
     {
       posts.map(({ frontmatter }) => (
-        <a href={`/blog/${frontmatter.slug}`}>
+        <Text tag="a" size="sm" href={`/blog/${frontmatter.slug}`}>
           <h3>{frontmatter.title}</h3>
-          <div>
-            Written by <strong>{frontmatter.author} </strong> on{" "}
+          <Text>
+            Written by <Text tag="span" weight="bold">{frontmatter.author} </Text> on{" "}
             {new Date(frontmatter.date).toLocaleDateString()}
-          </div>
+          </Text>
           <small>{frontmatter.label}</small>
-        </a>
+        </Text>
       ))
     }
   </section>

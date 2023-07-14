@@ -1,5 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import NavbarMain from "../components/NavbarMain.astro";
+import NavbarMobile from "../components/NavbarMobile.astro";
 import "../styles/index.scss";
 
 export interface Props {
@@ -7,6 +9,8 @@ export interface Props {
 }
 
 const { title = "Amirazmi | Welcome" } = Astro.props;
+const { pathname } = Astro.url;
+const isHomepage = pathname === "/";
 ---
 
 <!DOCTYPE html>
@@ -22,18 +26,25 @@ const { title = "Amirazmi | Welcome" } = Astro.props;
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
 		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
+		<script
+			src="https://kit.fontawesome.com/fbbec297e2.js"
+			crossorigin="anonymous"></script>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<Navbar />
+		{isHomepage && <Navbar />}
+		<NavbarMain />
+		<NavbarMobile />
 		<slot />
+
+		<script define:vars={{ isHomepage }}>
+			function showNavbarMainIfNotHomepage() {
+				const navbarMainEl = document.querySelector(".navbar-main");
+				if (!navbarMainEl || isHomepage) return;
+				navbarMainEl.classList.remove("navbar-hidden");
+			}
+			showNavbarMainIfNotHomepage();
+		</script>
 	</body>
 </html>

@@ -1,0 +1,62 @@
+.navbar-mobile {
+  display: none;
+
+  @include screen-sm {
+    display: block;
+  }
+
+  &-hamburger {
+    @include border;
+    @include padding-xs;
+    @include margin-md;
+    padding-bottom: 0.4rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    background: $color-white;
+  }
+
+  &-menulist {
+    @include border;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: $color-white;
+    z-index: 10;
+
+    &-slidein {
+      @include animate-slide-in;
+    }
+    &-slideout {
+      @include animate-slide-out;
+    }
+
+    &-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    &-close {
+      @include border;
+      @include padding-xs-vertical;
+      @include padding-md-inline;
+    }
+  }
+}

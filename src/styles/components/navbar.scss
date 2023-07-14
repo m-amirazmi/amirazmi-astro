@@ -1,20 +1,47 @@
 .navbar {
+  @include padding-2xl;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
-  @include padding-2xl;
+
+  @include screen-sm {
+    display: none;
+  }
 
   &-container {
-    @include padding-lg;
+    @include padding-lg-inline;
+    @include padding-md-vertical;
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
   }
 
   &-links {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: $spacing-sm;
+    gap: $spacing-md;
+    a {
+      position: relative;
+      @include animate-to-right;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1.4rem;
+        left: 0;
+        height: 0.4rem;
+        width: 100%;
+        background-color: red;
+        opacity: 0;
+        @include transition(0.2);
+      }
+    }
+  }
+
+  &-hidden {
+    display: none;
   }
 }

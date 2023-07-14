@@ -59,7 +59,7 @@
       cursor: pointer;
       position: relative;
       @include transition(0.25);
-      @include animate-to-left;
+      @include animate-to-right;
 
       &::after {
         @include transition(0.25);

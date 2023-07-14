@@ -161,7 +161,7 @@
   transition: #{$type} #{$duration}s ease-out;
 }
 
-@mixin animate-to-left {
+@mixin animate-to-right {
   &::after {
     clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
     opacity: 0;
@@ -179,6 +179,54 @@
   animation: blinker 1s linear infinite;
   @keyframes blinker {
     50% {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin animate-to-bottom {
+  animation: to-bottom 0.4s ease-out forwards;
+  @keyframes to-bottom {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animate-slide-in {
+  animation: slide-in 0.75s ease-out forwards;
+  @keyframes slide-in {
+    0% {
+      transform: translateX(0%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animate-slide-out {
+  animation: slide-out 0.75s ease-out forwards;
+  @keyframes slide-out {
+    0% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0%);
       opacity: 0;
     }
   }

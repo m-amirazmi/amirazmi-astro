@@ -1,0 +1,25 @@
+.navbar-main {
+  @include padding-2xl-inline;
+  @include padding-lg-vertical;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  @include screen-sm {
+    display: none;
+  }
+
+  &-container {
+    @include padding-lg-inline;
+    @include padding-md-vertical;
+    @include border;
+    @include animate-to-bottom;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+  }
+
+  &-links {
+    margin-left: auto;
+  }
+}

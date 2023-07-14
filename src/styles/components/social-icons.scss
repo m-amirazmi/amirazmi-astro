@@ -5,7 +5,7 @@
     @include border;
     @include padding-sm;
     @include transition(0.2);
-    @include animate-to-left;
+    @include animate-to-right;
     position: relative;
 
     @include screen-sm {

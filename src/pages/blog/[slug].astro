@@ -1,4 +1,6 @@
 ---
+import Container from "../../components/Container.astro";
+import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -14,8 +16,8 @@ const { Content, frontmatter } = Astro.props.post;
 ---
 
 <Layout>
-  <section>
-    <h1>{frontmatter.title}</h1>
+  <Container size="full">
+    <Text tag="h1">{frontmatter.title}</Text>
     <Content />
-  </section>
+  </Container>
 </Layout>
