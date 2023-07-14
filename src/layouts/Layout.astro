@@ -1,4 +1,5 @@
 ---
+import Navbar from "../components/Navbar.astro";
 import "../styles/index.scss";
 
 export interface Props {
@@ -32,6 +33,7 @@ const { title = "Amirazmi | Welcome" } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Navbar />
 		<slot />
 	</body>
 </html>
