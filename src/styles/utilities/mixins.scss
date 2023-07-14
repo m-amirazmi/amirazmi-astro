@@ -28,3 +28,123 @@
     @content;
   }
 }
+
+// Borders
+@mixin border {
+  border: $border-width $border-color $border-type;
+}
+
+// Spacings
+@mixin padding-xs {
+  padding: $spacing-xs;
+}
+@mixin padding-xs-vertical {
+  padding: $spacing-xs 0;
+}
+@mixin padding-xs-inline {
+  padding: 0 $spacing-xs;
+}
+@mixin margin-xs {
+  margin: $spacing-xs;
+}
+@mixin margin-xs-vertical {
+  margin: $spacing-xs 0;
+}
+@mixin margin-xs-inline {
+  margin: 0 $spacing-xs;
+}
+
+@mixin padding-sm {
+  padding: $spacing-sm;
+}
+@mixin padding-sm-vertical {
+  padding: $spacing-sm 0;
+}
+@mixin padding-sm-inline {
+  padding: 0 $spacing-sm;
+}
+@mixin margin-sm {
+  margin: $spacing-sm;
+}
+@mixin margin-sm-vertical {
+  margin: $spacing-sm 0;
+}
+@mixin margin-sm-inline {
+  margin: 0 $spacing-sm;
+}
+
+@mixin padding-md {
+  padding: $spacing-md;
+}
+@mixin padding-md-vertical {
+  padding: $spacing-md 0;
+}
+@mixin padding-md-inline {
+  padding: 0 $spacing-md;
+}
+@mixin margin-md {
+  margin: $spacing-md;
+}
+@mixin margin-md-vertical {
+  margin: $spacing-md 0;
+}
+@mixin margin-md-inline {
+  margin: 0 $spacing-md;
+}
+
+@mixin padding-lg {
+  padding: $spacing-lg;
+}
+@mixin padding-lg-vertical {
+  padding: $spacing-lg 0;
+}
+@mixin padding-lg-inline {
+  padding: 0 $spacing-lg;
+}
+@mixin margin-lg {
+  margin: $spacing-lg;
+}
+@mixin margin-lg-vertical {
+  margin: $spacing-lg 0;
+}
+@mixin margin-lg-inline {
+  margin: 0 $spacing-lg;
+}
+
+@mixin padding-xl {
+  padding: $spacing-xl;
+}
+@mixin padding-xl-vertical {
+  padding: $spacing-xl 0;
+}
+@mixin padding-xl-inline {
+  padding: 0 $spacing-xl;
+}
+@mixin margin-xl {
+  margin: $spacing-xl;
+}
+@mixin margin-xl-vertical {
+  margin: $spacing-xl 0;
+}
+@mixin margin-xl-inline {
+  margin: 0 $spacing-xl;
+}
+
+@mixin padding-2xl {
+  padding: $spacing-2xl;
+}
+@mixin padding-2xl-vertical {
+  padding: $spacing-2xl 0;
+}
+@mixin padding-2xl-inline {
+  padding: 0 $spacing-2xl;
+}
+@mixin margin-2xl {
+  margin: $spacing-2xl;
+}
+@mixin margin-2xl-vertical {
+  margin: $spacing-2xl 0;
+}
+@mixin margin-2xl-inline {
+  margin: 0 $spacing-2xl;
+}
