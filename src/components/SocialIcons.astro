@@ -1,0 +1,12 @@
+---
+import Text from "./Text.astro";
+import socialsData from "../data/socials.json";
+---
+
+<div class="social-icons">
+  {socialsData.map((social)=>(
+    <Text tag="a" href={social.link} target="_blank" size="md">
+      <i class={social.icon}></i>
+    </Text>
+  ))}
+</div>

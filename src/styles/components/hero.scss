@@ -1,7 +1,12 @@
 .hero {
   @include padding-2xl;
   height: 100vh;
-  .hero-container {
+
+  @include screen-sm {
+    @include padding-md;
+  }
+
+  &-container {
     @include border;
     @include padding-md;
     height: 100%;
@@ -10,9 +15,67 @@
     align-items: center;
     justify-content: center;
     gap: 2.4rem;
+    text-align: center;
 
-    .hero-amir {
-      color: $color-primary;
+    h5 {
+      position: relative;
+      &::after {
+        content: "";
+        width: 1.6rem;
+        height: 0.3rem;
+        background-color: $color-primary;
+        position: absolute;
+        bottom: 0.3rem;
+        right: -1.8rem;
+        @include animate-blinking;
+      }
+    }
+  }
+  &-name span {
+    color: $color-primary;
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+
+    @include screen-sm {
+      flex-direction: column;
+      margin-top: $spacing-xs;
+    }
+
+    &-projects {
+      @include border;
+      @include padding-sm-vertical;
+      @include padding-md-inline;
+      cursor: pointer;
+      position: relative;
+      @include transition(0.25);
+      @include animate-to-left;
+
+      &::after {
+        @include transition(0.25);
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $color-primary;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+
+      @include screen-sm {
+        @include padding-xs-vertical;
+        @include padding-sm-inline;
+      }
+
+      &:hover {
+        background-color: transparent;
+        color: $color-white;
+      }
     }
   }
 }

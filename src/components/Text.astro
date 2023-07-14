@@ -1,8 +1,10 @@
 ---
 export interface Props {
-  tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
+  tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "a";
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
   weight?: "thin" | "regular" | "semibold" | "bold";
+  href?: string;
+  target?: "_blank" | "_self";
   class?: string;
   uppercase?: boolean;
   lowercase?: boolean;
@@ -17,6 +19,8 @@ const {
   uppercase,
   lowercase,
   capitalize,
+  href,
+  target,
 } = Astro.props as Props;
 const Component = tag;
 
@@ -33,9 +37,14 @@ const fontSizesDefault = {
 
 const fontSize = !size ? fontSizesDefault[tag] : size;
 
-const classes = `text-${fontSize} font-${weight} ${
+const classes = `text text-${fontSize} font-${weight} ${
   uppercase ? "uppercase" : ""
 } ${lowercase ? "lowercase" : ""} ${capitalize ? "capitalize" : ""} ${c || ""}`;
+
+const attrs = {
+  href,
+  target,
+};
 ---
 
-<Component class:list={[classes]}><slot /></Component>
+<Component {...attrs} class:list={[classes]}><slot /></Component>

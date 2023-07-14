@@ -1,14 +1,14 @@
 // @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
 
 // Font Family
 $font-primary: "Quicksand", sans-serif;
 $font-code: "Fira Code", monospace;
 
 $font-weights: (
-  "thin": 300,
-  "regular": 400,
-  "semibold": 500,
+  "thin": 400,
+  "regular": 500,
+  "semibold": 600,
   "bold": 700,
 );
 
@@ -16,22 +16,22 @@ $font-sizes: (
   "xs": 1.4rem,
   "sm": 1.6rem,
   "md": 2.4rem,
-  "lg": 3.2rem,
-  "xl": 4rem,
-  "2xl": 5rem,
-  "3xl": 6rem,
-  "4xl": 7rem,
+  "lg": 3rem,
+  "xl": 3.5rem,
+  "2xl": 4rem,
+  "3xl": 4.5rem,
+  "4xl": 5rem,
 );
 
 $font-sizes-mobile: (
   "xs": 1.2rem,
   "sm": 1.4rem,
-  "md": 2rem,
-  "lg": 3rem,
-  "xl": 3.5rem,
-  "2xl": 4.5rem,
-  "3xl": 5rem,
-  "4xl": 5.5rem,
+  "md": 1.8rem,
+  "lg": 2rem,
+  "xl": 2.5rem,
+  "2xl": 3rem,
+  "3xl": 3.5rem,
+  "4xl": 4rem,
 );
 
 $text-transforms: (

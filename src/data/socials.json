@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "LinkedIn",
+    "icon": "fa-brands fa-linkedin-in",
+    "link": "https://www.linkedin.com/in/m-amirazmi/"
+  },
+  {
+    "id": "2",
+    "name": "GitHub",
+    "icon": "fa-brands fa-github",
+    "link": "https://github.com/m-amirazmi"
+  },
+  {
+    "id": "3",
+    "name": "Twitter",
+    "icon": "fa-brands fa-twitter",
+    "link": "https://twitter.com/dev_amirazmi"
+  },
+  {
+    "id": "4",
+    "name": "Tiktok",
+    "icon": "fa-brands fa-tiktok",
+    "link": "https://www.tiktok.com/@mamirazmi"
+  }
+]
