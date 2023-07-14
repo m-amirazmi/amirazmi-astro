@@ -1,0 +1,27 @@
+@each $key, $value in $font-sizes {
+  .text-#{$key} {
+    font-size: $value;
+    font-family: $font-primary;
+    line-height: 1;
+  }
+}
+
+@each $key, $value in $font-sizes-mobile {
+  .text-#{$key} {
+    @include screen-sm {
+      font-size: $value;
+    }
+  }
+}
+
+@each $key, $value in $font-weights {
+  .font-#{$key} {
+    font-weight: $value;
+  }
+}
+
+@each $key, $value in $text-transforms {
+  .#{$key} {
+    text-transform: $value;
+  }
+}

@@ -1,13 +1,10 @@
 @import "./variables";
 @import "./base";
 @import "./utilities";
+@import "./components";
 
 body {
   min-height: 100vh;
-
-  h1 {
-    font-size: 3rem;
-  }
 
   pre {
     padding: 24px;

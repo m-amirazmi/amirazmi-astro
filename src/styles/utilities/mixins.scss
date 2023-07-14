@@ -1,0 +1,30 @@
+// Media Screens
+@mixin screen-sm {
+  @media (max-width: #{$screen-max-sm}) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (max-width: #{$screen-max-md}) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (max-width: #{$screen-max-lg}) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media (max-width: #{$screen-max-xl}) {
+    @content;
+  }
+}
+
+@mixin screen-2xl {
+  @media (max-width: #{$screen-max-2xl}) {
+    @content;
+  }
+}

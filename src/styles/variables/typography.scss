@@ -1,13 +1,40 @@
-// The variables for typography basically (desktop, tablet, mobile):
-// 1. Font size
-// 2. Font weight
-// 3. Font family
-
-// Font Weight
-$font-thin: 100;
-$font-regular: 400;
-$font-bold: 400;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;700&display=swap");
 
 // Font Family
-$font-primary: "Roboto", sans-serif;
+$font-primary: "Lexend Deca", sans-serif;
 $font-code: "Fira Code", monospace;
+
+$font-weights: (
+  "thin": 100,
+  "regular": 300,
+  "semibold": 400,
+  "bold": 700,
+);
+
+$font-sizes: (
+  "xs": 1.4rem,
+  "sm": 1.6rem,
+  "md": 2.4rem,
+  "lg": 3.2rem,
+  "xl": 4rem,
+  "2xl": 5rem,
+  "3xl": 6rem,
+  "4xl": 7rem,
+);
+
+$font-sizes-mobile: (
+  "xs": 1.2rem,
+  "sm": 1.4rem,
+  "md": 2rem,
+  "lg": 3rem,
+  "xl": 3.5rem,
+  "2xl": 4.5rem,
+  "3xl": 5rem,
+  "4xl": 5.5rem,
+);
+
+$text-transforms: (
+  "uppercase": uppercase,
+  "lowercase": lowercase,
+  "capitalize": capitalize,
+);

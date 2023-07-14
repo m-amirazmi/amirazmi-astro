@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Text from "../components/Text.astro";
+import Container from "../components/Container.astro";
 ---
 
 <Layout>
-	<h1>Work In Progress...Stay Tuned</h1>
-	<div>
-		<a href="/blog">Blog</a>
-		<a href="/docs/components">Components Documentation</a>
-	</div>
+	<Container size="lg">
+		<Text tag="p">Hi! My Name</Text>
+		<Text>Amir Azmi</Text>
+		<Text>Front End Developer</Text>
+	</Container>
 </Layout>

@@ -1,0 +1,7 @@
+@each $key, $value in $containers {
+  .container-#{$key} {
+    width: $value;
+    padding-inline: 2.4rem;
+    margin-inline: auto;
+  }
+}
