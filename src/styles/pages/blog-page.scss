@@ -1,0 +1,29 @@
+@import "../variables";
+@import "../utilities/mixins.scss";
+
+.blog {
+  width: 100%;
+  h1 {
+    margin-bottom: $spacing-md;
+    @include screen-sm {
+      margin-bottom: $spacing-sm;
+    }
+  }
+  &-posts {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    @include screen-sm {
+      margin-inline: 0;
+      gap: $spacing-sm;
+    }
+    &-item {
+      width: calc((1 / 2 * 100%) - ($spacing-md / 2));
+      cursor: pointer;
+      @include screen-sm {
+        width: 100%;
+      }
+    }
+  }
+}

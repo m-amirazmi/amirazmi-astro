@@ -1,8 +1,10 @@
 ---
+import Card from "../../components/Card.astro";
 import Container from "../../components/Container.astro";
 import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
 import { collectLabels } from "../../utils/helpers";
+import '../../styles/pages/blog-page.scss';
 
 const posts = await Astro.glob("../../content/posts/*.md");
 const labels = collectLabels(posts);
@@ -10,18 +12,27 @@ const labels = collectLabels(posts);
 
 <Layout>
   <Container size="xl" inlinePadding="sm">
-    {
-      posts.map(({ frontmatter }) => (
-        <Text tag="a" size="sm" href={`/blog/${frontmatter.slug}`}>
-          <h3>{frontmatter.title}</h3>
-          <Text>
-            Written by <Text tag="span" weight="bold">{frontmatter.author} </Text> on{" "}
-            {new Date(frontmatter.date).toLocaleDateString()}
-          </Text>
-          <small>{frontmatter.label}</small>
-        </Text>
-      ))
-    }
+    <div class="blog">
+      <Text tag="h1">My Blog Posts</Text>
+      <div class="blog-posts">
+        {
+          posts.map(({ frontmatter }) => (
+            <div class="blog-posts-item">
+              <Text tag="a" size="sm" href={`/blog/${frontmatter.slug}`}>
+                <Card>
+                  <h3>{frontmatter.title}</h3>
+                  <Text>
+                    Written by <Text tag="span" weight="bold">{frontmatter.author} </Text> on{" "}
+                    {new Date(frontmatter.date).toLocaleDateString()}
+                  </Text>
+                  <small>{frontmatter.label}</small>
+                </Card>
+              </Text>
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </Container>
 </Layout>
 

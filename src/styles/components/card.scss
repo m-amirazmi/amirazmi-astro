@@ -1,0 +1,10 @@
+.card {
+  @include border;
+  @include padding-md;
+  display: block;
+  height: 100%;
+
+  @include screen-sm {
+    @include padding-sm;
+  }
+}

@@ -1,0 +1,66 @@
+---
+title: My Actual Post
+slug: second-post
+excerpt: This is my official first post for my astro blog. Might be deleted later
+date: 2023-07-12
+author: Amir Azmi
+label: javascript, react, typescript, html
+---
+
+# Welcome
+
+This is my first blog post. Curabitur quis porttitor mauris. Sed quis nulla malesuada, imperdiet ipsum eleifend, pharetra lacus. Maecenas vehicula tincidunt lorem sed elementum. Vestibulum luctus consectetur risus at aliquet. Donec ac sapien malesuada, congue neque ultrices, fringilla velit. Suspendisse potenti. Maecenas ac elit sem. Suspendisse malesuada ligula eu efficitur vulputate. Mauris tincidunt urna a elit ultricies porttitor. Donec vestibulum nibh euismod lectus rutrum sollicitudin. Aliquam luctus urna volutpat erat malesuada sodales. Etiam dapibus interdum est, sit amet aliquet turpis accumsan non. Sed tincidunt felis ut magna tincidunt, sit amet mollis neque ultricies. Duis mollis, libero sit amet dictum faucibus, mauris sapien volutpat est, sit amet molestie enim eros et lorem.
+
+## Code Example
+
+Here will show some different code example in React, Javascript and Typescript
+
+### Javascript
+
+The code snippet shows the variables in Javascript.
+
+```javascript
+const string = "abc";
+const number = 123;
+const cars = ["honda", "toyota"];
+const isTrue = true;
+```
+
+### React
+
+The code snippet shows the example of React component with `useState()` hook.
+
+```jsx
+const [state, setState] = useState(false);
+
+if (state) return null;
+return (
+  <div>
+    <div>This is react component</div>
+  </div>
+);
+```
+
+### React Typescript
+
+The code snippet shows the example of React Typescript component with custom `interface Props`.
+
+```tsx
+export interface Props {
+  children?: React.ReactNode;
+}
+
+export default function Button({ children }: Props) {
+  const handleClick = (event) => {
+    console.log(event);
+    if (!event) return;
+    return true;
+  };
+
+  return <button>{children}</button>;
+}
+```
+
+## Conclusion
+
+Morbi interdum mi at nisl aliquam, eu tristique diam efficitur. Etiam at placerat elit. Phasellus a risus pretium, vulputate lectus ut, eleifend ex. Proin facilisis odio a magna sodales rutrum. Fusce venenatis mi ipsum, nec sagittis augue dapibus nec. Proin vel enim varius, sollicitudin mauris id, viverra tortor. Phasellus feugiat, ex commodo malesuada congue, elit ipsum lacinia velit, et fermentum nunc nunc id quam. Proin at quam vitae dui lobortis congue eu elementum quam. Ut mattis, magna vitae condimentum dignissim, ligula nisl fermentum lectus, sed lobortis magna lectus a enim. Quisque vitae purus rutrum, euismod urna auctor, egestas sem. Aenean dictum, nisl vel imperdiet mattis, urna justo varius massa, sed sollicitudin dui massa non eros. Sed mi elit, sagittis sit amet turpis in, faucibus consectetur justo. Nam non tincidunt tortor, vel pellentesque tellus. Integer posuere nisi vel porta malesuada. Etiam scelerisque quam arcu, quis lacinia magna accumsan ac.
