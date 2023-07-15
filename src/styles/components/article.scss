@@ -1,5 +1,8 @@
 .article {
   color: $color-black;
+  background-color: $color-white;
+  @include border;
+  @include padding-md;
 
   @each $key, $value in $font-tags {
     #{$key} {

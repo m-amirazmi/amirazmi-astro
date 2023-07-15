@@ -1,0 +1,15 @@
+---
+import Text from "./Text.astro";
+
+export interface Props {
+  class: string;
+}
+
+const { class: c } = Astro.props as Props;
+
+const classes = `article`;
+---
+
+<aside>
+  <Text tag="h3">This is sidebar</Text>
+</aside>

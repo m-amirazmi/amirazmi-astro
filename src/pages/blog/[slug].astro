@@ -23,9 +23,12 @@ const { Content, frontmatter } = Astro.props.post;
       <Text tag="h1" weight="bold" class="post-page-title">
         {frontmatter.title}
       </Text>
-      <Article>
-        <Content />
-      </Article>
+      <div class="post-page-content">
+        <Article class="post-page-article">
+          <Content />
+        </Article>
+        <div class="post-page-sidebar">This is sidebar</div>
+      </div>
     </Container>
   </div>
 </Layout>

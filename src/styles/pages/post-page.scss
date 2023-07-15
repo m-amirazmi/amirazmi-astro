@@ -4,7 +4,23 @@
 
 .post-page {
   &-title {
+    @include border;
+    @include padding-md;
     margin-bottom: 3.6rem;
+    background-color: $color-white;
+  }
+
+  &-content {
+    display: flex;
+    gap: $spacing-md;
+  }
+
+  &-article {
+    width: 70%;
+  }
+
+  &-sidebar {
+    width: 30%;
   }
 
   pre {

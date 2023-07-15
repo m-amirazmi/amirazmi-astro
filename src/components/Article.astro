@@ -1,6 +1,13 @@
 ---
+export interface Props {
+  class?: string;
+}
+
+const { class: c } = Astro.props as Props;
+
+const classes = `article ${c}`;
 ---
 
-<article class="article">
+<article class={classes}>
   <slot />
 </article>
