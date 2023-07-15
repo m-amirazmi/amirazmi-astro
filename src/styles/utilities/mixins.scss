@@ -202,15 +202,14 @@
   animation: slide-in 0.75s ease-out forwards;
   @keyframes slide-in {
     0% {
-      transform: translateX(0%);
+      transform: translateX(100%);
       opacity: 0;
     }
     50% {
       opacity: 1;
-      visibility: visible;
     }
     100% {
-      transform: translateX(-105%);
+      transform: translateX(0%);
       opacity: 1;
     }
   }
@@ -220,15 +219,14 @@
   animation: slide-out 0.75s ease-out forwards;
   @keyframes slide-out {
     0% {
-      transform: translateX(-105%);
+      transform: translateX(0%);
       opacity: 1;
     }
     50% {
       opacity: 0;
-      visibility: hidden;
     }
     100% {
-      transform: translateX(0%);
+      transform: translateX(100%);
       opacity: 0;
     }
   }

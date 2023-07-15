@@ -20,29 +20,26 @@ import Text from "./Text.astro";
       </Text>
     </div>
   </div>
-  <div class="navbar-mobile-menulist">
-    <div class="navbar-mobile-menulist-container">
-      <div class="navbar-mobile-menulist-links">
-        <Text tag="a" weight="semibold" size="xl" href="/">Home</Text>
-        <Text tag="a" weight="semibold" size="xl" href="/projects">
-          Projects
-        </Text>
-        <Text tag="a" weight="semibold" size="xl" href="/blog">Blog</Text>
-        <Text tag="a" weight="semibold" size="xl" href="/contact">Contact</Text>
-      </div>
-      <Text size="xl" weight="semibold" class="navbar-mobile-menulist-close">
-        Close
-      </Text>
-    </div>
-  </div>
 </nav>
 
+<div class="navbar-m-list">
+  <div class="navbar-m-list-container">
+    <div class="navbar-m-list-links">
+      <Text tag="a" weight="semibold" size="xl" href="/">Home</Text>
+      <Text tag="a" weight="semibold" size="xl" href="/projects">Projects</Text>
+      <Text tag="a" weight="semibold" size="xl" href="/blog">Blog</Text>
+      <Text tag="a" weight="semibold" size="xl" href="/contact">Contact</Text>
+    </div>
+    <Text size="xl" weight="semibold" class="navbar-m-list-close">Close</Text>
+  </div>
+</div>
+
 <script>
-  const menulistEl = document.querySelector(".navbar-mobile-menulist");
+  const menulistEl = document.querySelector(".navbar-m-list");
   const openMenuEl = document.querySelector(".navbar-mobile-hamburger");
-  const menuCloseEl = document.querySelector(".navbar-mobile-menulist-close");
-  const slideInClass = "navbar-mobile-menulist-slidein";
-  const slideOutClass = "navbar-mobile-menulist-slideout";
+  const menuCloseEl = document.querySelector(".navbar-m-list-close");
+  const slideInClass = "navbar-m-list-slide-in";
+  const slideOutClass = "navbar-m-list-slide-out";
 
   function toggleMenu() {
     const hasSlideIn = menulistEl.classList.contains(slideInClass);

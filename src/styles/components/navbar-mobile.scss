@@ -35,6 +35,7 @@
 
   &-container {
     @include border;
+    position: relative;
     border-bottom: 0;
     display: flex;
     background: $color-white;
@@ -47,60 +48,44 @@
     @include padding-sm-vertical;
     @include padding-sm-inline;
   }
+}
 
-  &-menulist {
-    display: block;
-    position: relative;
-    visibility: hidden;
+.navbar-m-list {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  @include border;
+  border-top: 0;
+  border-bottom: 0;
+  opacity: 0;
+
+  &-slide-in {
+    @include animate-slide-in;
+  }
+
+  &-slide-out {
+    @include animate-slide-out;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background-color: $color-white;
-    z-index: 10;
-
-    &::after {
-      content: "";
-      background-color: $color-white;
-      top: -5.6rem;
-      left: 102%;
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-    }
-
-    &-slidein {
-      @include animate-slide-in;
-    }
-    &-slideout {
-      @include animate-slide-out;
-    }
-
-    &-container {
-      position: absolute;
-      @include border;
-      background-color: $color-white;
-      height: calc(100vh - 4rem);
-      width: 100%;
-      top: -4rem;
-      left: 105%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 4rem;
-    }
-
-    &-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    &-close {
-      @include border;
-      @include padding-xs-vertical;
-      @include padding-md-inline;
-    }
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  &-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
   }
 }
