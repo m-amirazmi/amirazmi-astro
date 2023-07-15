@@ -6,3 +6,11 @@ $containers: (
   "xl": $screen-max-xl,
   "2xl": $screen-max-2xl,
 );
+
+$containers-padding: (
+  "sm": $spacing-sm,
+  "md": $spacing-md,
+  "lg": $spacing-lg,
+  "xl": $spacing-xl,
+  "2xl": $spacing-2xl,
+);

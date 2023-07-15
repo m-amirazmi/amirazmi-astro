@@ -1,11 +1,12 @@
 ---
 export interface Props {
   size?: "full" | "xl" | "2xl" | "lg" | "md" | "sm";
+  inlinePadding?: "sm" | "md" | "lg" | "xl" | "2xl";
 }
 
-const { size = "full" } = Astro.props as Props;
+const { size = "full", inlinePadding } = Astro.props as Props;
 
-const classes = `container-${size} bg`;
+const classes = `container-${size} container-padding-${inlinePadding}`;
 ---
 
 <div class={classes}><slot /></div>

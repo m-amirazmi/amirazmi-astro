@@ -2,6 +2,8 @@
 import Container from "../../components/Container.astro";
 import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
+import Article from "../../components/Article.astro";
+import "../../styles/pages/post-page.scss";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../content/posts/*.md");
@@ -16,8 +18,12 @@ const { Content, frontmatter } = Astro.props.post;
 ---
 
 <Layout>
-  <Container size="full">
-    <Text tag="h1">{frontmatter.title}</Text>
-    <Content />
-  </Container>
+  <div class="post-page">
+    <Container size="md" inlinePadding="md">
+      <Text tag="h1" class="post-page-title">{frontmatter.title}</Text>
+      <Article>
+        <Content />
+      </Article>
+    </Container>
+  </div>
 </Layout>

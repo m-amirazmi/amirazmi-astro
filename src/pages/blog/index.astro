@@ -1,4 +1,5 @@
 ---
+import Container from "../../components/Container.astro";
 import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
 import { collectLabels } from "../../utils/helpers";
@@ -8,7 +9,7 @@ const labels = collectLabels(posts);
 ---
 
 <Layout>
-  <section>
+  <Container size="full" inlinePadding="2xl">
     {
       posts.map(({ frontmatter }) => (
         <Text tag="a" size="sm" href={`/blog/${frontmatter.slug}`}>
@@ -21,7 +22,7 @@ const labels = collectLabels(posts);
         </Text>
       ))
     }
-  </section>
+  </Container>
 </Layout>
 
 <script define:vars={{ labels }}>

@@ -1,0 +1,26 @@
+.article {
+  color: $color-black;
+
+  @each $key, $value in $font-tags {
+    #{$key} {
+      font-size: $value;
+      font-family: $font-primary;
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  @each $key, $value in $font-tags-mobile {
+    #{$key} {
+      @include screen-sm {
+        font-size: $value;
+      }
+    }
+  }
+
+  p,
+  span {
+    line-height: 200%;
+    margin-bottom: 1.6rem;
+  }
+}

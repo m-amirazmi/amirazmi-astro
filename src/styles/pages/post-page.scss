@@ -1,0 +1,23 @@
+.post-page {
+  &-title {
+    margin-bottom: 3.6rem;
+  }
+
+  pre {
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 2.4rem;
+  }
+
+  code {
+    span {
+      font-family: "Fira Code";
+      font-size: 14px;
+    }
+
+    .line {
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+  }
+}
