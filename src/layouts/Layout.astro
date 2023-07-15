@@ -41,8 +41,10 @@ const isHomepage = pathname === "/";
 		<script define:vars={{ isHomepage }}>
 			function showNavbarMainIfNotHomepage() {
 				const navbarMainEl = document.querySelector(".navbar-main");
+				const navbarMobile = document.querySelector(".navbar-mobile");
 				if (!navbarMainEl || isHomepage) return;
 				navbarMainEl.classList.remove("navbar-hidden");
+				navbarMobile.classList.add("navbar-mobile-sticky");
 			}
 			showNavbarMainIfNotHomepage();
 		</script>
