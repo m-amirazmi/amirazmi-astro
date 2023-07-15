@@ -8,7 +8,7 @@ import Container from "../components/Container.astro";
 <Layout>
 	<Hero />
 	<div id="main">
-		<Container inlinePadding="2xl">
+		<Container size="md" inlinePadding="2xl">
 			<Text tag="p" size="lg">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ut
 				delectus, rem aspernatur, natus non esse unde officia perspiciatis
@@ -133,12 +133,16 @@ import Container from "../components/Container.astro";
 		const rect = mainContent.getBoundingClientRect();
 		const navbarMainEl = document.querySelector(".navbar-main");
 		const navbarEl = document.querySelector(".navbar");
-		if (rect.top <= 0) {
+		const navbarMobile = document.querySelector(".navbar-mobile");
+
+		if (rect.top < 0) {
 			navbarMainEl.classList.remove("navbar-hidden");
 			navbarEl.classList.add("navbar-hidden");
+			navbarMobile.classList.add("navbar-mobile-sticky");
 		} else {
 			navbarMainEl.classList.add("navbar-hidden");
 			navbarEl.classList.remove("navbar-hidden");
+			navbarMobile.classList.remove("navbar-mobile-sticky");
 		}
 	}
 

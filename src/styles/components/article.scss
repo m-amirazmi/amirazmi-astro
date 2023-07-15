@@ -20,7 +20,11 @@
 
   p,
   span {
-    line-height: 200%;
+    line-height: 180%;
     margin-bottom: 1.6rem;
+
+    @include screen-sm {
+      line-height: 150%;
+    }
   }
 }

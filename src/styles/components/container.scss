@@ -10,7 +10,7 @@
     padding-inline: $value;
 
     @include screen-sm {
-      padding-inline: $spacing-md;
+      padding-inline: $spacing-sm;
     }
   }
 }

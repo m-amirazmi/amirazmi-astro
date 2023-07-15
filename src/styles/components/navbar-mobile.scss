@@ -1,20 +1,51 @@
 .navbar-mobile {
   display: none;
+  @include padding-md;
+  position: absolute;
+  width: 100%;
 
   @include screen-sm {
     display: block;
   }
 
-  &-hamburger {
-    @include border;
-    @include padding-xs;
-    @include margin-md;
-    padding-bottom: 0.4rem;
-    position: fixed;
+  &-sticky {
+    @include padding-sm;
+    position: sticky;
     top: 0;
-    right: 0;
-    display: inline-block;
+    left: 0;
+    @include animate-to-bottom;
+
+    .navbar-mobile-brand {
+      @include padding-xs-vertical;
+    }
+
+    .navbar-mobile-container {
+      @include border;
+    }
+    .navbar-mobile-hamburger {
+      border-left: 1px solid $color-black;
+      @include padding-xs-vertical;
+    }
+  }
+
+  &-brand {
+    @include padding-sm-vertical;
+    @include padding-sm-inline;
+  }
+
+  &-container {
+    @include border;
+    border-bottom: 0;
+    display: flex;
     background: $color-white;
+    width: 100%;
+    align-items: center;
+  }
+
+  &-hamburger {
+    margin-left: auto;
+    @include padding-sm-vertical;
+    @include padding-sm-inline;
   }
 
   &-menulist {
