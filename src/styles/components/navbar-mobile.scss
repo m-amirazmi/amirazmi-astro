@@ -3,6 +3,7 @@
   @include padding-md;
   position: absolute;
   width: 100%;
+  z-index: 10;
 
   @include screen-sm {
     display: block;
