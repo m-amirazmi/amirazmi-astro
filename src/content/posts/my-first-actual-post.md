@@ -1,7 +1,7 @@
 ---
 title: My Actual Post
 slug: second-post
-excerpt: This is my official first post for my astro blog. Might be deleted later
+excerpt: In the world of web development, React has emerged as a powerful JavaScript library that enables developers to build dynamic and interactive user interfaces. Its component-based architecture and efficient rendering make it a popular choice among developers, whether they are working on small personal projects or large-scale applications. If you're new to React or looking to enhance your skills, this blog is here to guide you through the process of utilizing React applications effectively.
 date: 2023-07-12
 author: Amir Azmi
 label: javascript, react, typescript, html

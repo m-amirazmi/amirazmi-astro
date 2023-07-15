@@ -7,4 +7,15 @@
   @include screen-sm {
     @include padding-sm;
   }
+
+  &-title {
+    margin-bottom: 0.8rem;
+  }
+
+  &-subtitle {
+    color: $color-black;
+    opacity: 0.5;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
 }

@@ -17,18 +17,15 @@ const labels = collectLabels(posts);
       <div class="blog-posts">
         {
           posts.map(({ frontmatter }) => (
-            <div class="blog-posts-item">
-              <Text tag="a" size="sm" href={`/blog/${frontmatter.slug}`}>
-                <Card>
-                  <h3>{frontmatter.title}</h3>
-                  <Text>
-                    Written by <Text tag="span" weight="bold">{frontmatter.author} </Text> on{" "}
-                    {new Date(frontmatter.date).toLocaleDateString()}
-                  </Text>
-                  <small>{frontmatter.label}</small>
-                </Card>
-              </Text>
-            </div>
+            <Text tag="a" class="blog-posts-item" size="sm" href={`/blog/${frontmatter.slug}`}>
+              <Card 
+                title={frontmatter.title} 
+                subtitle={`${frontmatter.author} on ${new Date(frontmatter.date).toLocaleDateString()}`}
+                summary={frontmatter.excerpt}
+                tags={frontmatter.label.split(", ")}
+              >
+              </Card>
+            </Text>
           ))
         }
       </div>

@@ -1,7 +1,7 @@
 ---
 title: First Post
 slug: first-post
-excerpt: This is my official first post for my astro blog. Might be deleted later
+excerpt: Create React App simplifies the setup process, allowing you to focus on writing code rather than configuring build tools. It provides a development server, hot reloading, and a straightforward folder structure to organize your components, styles, and assets. By following the steps outlined in this blog, you'll learn how to set up a new React project using Create React App, and how to run and test your application locally.
 date: 2023-07-12
 author: Amir Azmi
 label: javascript, react, typescript
