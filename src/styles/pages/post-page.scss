@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../utilities";
+@import "../components/text.scss";
 
 .post-page {
   &-title {
@@ -23,9 +24,10 @@
       font-family: "Fira Code";
       font-size: 1.6rem;
       background-color: $color-bg-code;
-
+      @extend .font-thin;
       @include screen-sm {
         font-size: 1.4rem;
+        @extend .font-thin;
       }
     }
 

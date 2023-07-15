@@ -20,7 +20,9 @@ const { Content, frontmatter } = Astro.props.post;
 <Layout>
   <div class="post-page">
     <Container size="full" inlinePadding="2xl">
-      <Text tag="h1" class="post-page-title">{frontmatter.title}</Text>
+      <Text tag="h1" weight="bold" class="post-page-title">
+        {frontmatter.title}
+      </Text>
       <Article>
         <Content />
       </Article>

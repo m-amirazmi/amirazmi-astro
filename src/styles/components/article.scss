@@ -7,6 +7,12 @@
       font-family: $font-primary;
       line-height: 1;
       margin-bottom: 0.8rem;
+
+      @if $key == "p" or $key == "span" {
+        @extend .font-regular;
+      } @else {
+        @extend .font-semibold;
+      }
     }
   }
 
