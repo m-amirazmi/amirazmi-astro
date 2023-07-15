@@ -1,14 +1,19 @@
 ---
+import Container from "./Container.astro";
 import Text from "./Text.astro";
 ---
 
 <nav class="navbar-main navbar-hidden">
-  <div class="navbar-main-container">
-    <Text tag="a" size="md" weight="bold" href="/">AA.DEV</Text>
-    <div class="navbar-links">
-      <Text tag="a" weight="semibold" size="sm" href="/projects">Projects</Text>
-      <Text tag="a" weight="semibold" size="sm" href="/blog">Blog</Text>
-      <Text tag="a" weight="semibold" size="sm" href="/contact">Contact</Text>
+  <Container size="xl" inlinePadding="sm">
+    <div class="navbar-main-container">
+      <Text tag="a" size="md" weight="bold" href="/">AA.DEV</Text>
+      <div class="navbar-links">
+        <Text tag="a" weight="semibold" size="sm" href="/projects">
+          Projects
+        </Text>
+        <Text tag="a" weight="semibold" size="sm" href="/blog">Blog</Text>
+        <Text tag="a" weight="semibold" size="sm" href="/contact">Contact</Text>
+      </div>
     </div>
-  </div>
+  </Container>
 </nav>

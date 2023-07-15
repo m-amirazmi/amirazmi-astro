@@ -9,7 +9,7 @@ const labels = collectLabels(posts);
 ---
 
 <Layout>
-  <Container size="full" inlinePadding="2xl">
+  <Container size="xl" inlinePadding="sm">
     {
       posts.map(({ frontmatter }) => (
         <Text tag="a" size="sm" href={`/blog/${frontmatter.slug}`}>
