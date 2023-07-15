@@ -38,12 +38,3 @@
   max-height: calc(1.2em * 3); /* Line height multiplied by number of lines */
   word-wrap: break-word;
 }
-
-.text-truncate::after {
-  content: "..."; /* Ellipses */
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding-left: 2px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
-}

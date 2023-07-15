@@ -20,7 +20,7 @@ const labels = collectLabels(posts);
             <Text tag="a" class="blog-posts-item" size="sm" href={`/blog/${frontmatter.slug}`}>
               <Card 
                 title={frontmatter.title} 
-                subtitle={`${frontmatter.author} on ${new Date(frontmatter.date).toLocaleDateString()}`}
+                subtitle={`Posted on ${new Date(frontmatter.date).toLocaleDateString()}`}
                 summary={frontmatter.excerpt}
                 tags={frontmatter.label.split(", ")}
               >

@@ -4,6 +4,7 @@
   a {
     @include border;
     @include padding-sm;
+    @include padding-md-inline;
     @include transition(0.2);
     @include animate-to-right;
     position: relative;
