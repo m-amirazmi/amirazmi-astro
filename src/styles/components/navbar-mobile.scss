@@ -51,7 +51,7 @@
   &-menulist {
     display: block;
     position: relative;
-
+    visibility: hidden;
     width: 100%;
     background-color: $color-white;
     z-index: 10;

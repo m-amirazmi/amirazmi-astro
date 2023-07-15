@@ -207,6 +207,7 @@
     }
     50% {
       opacity: 1;
+      visibility: visible;
     }
     100% {
       transform: translateX(-105%);
@@ -224,6 +225,7 @@
     }
     50% {
       opacity: 0;
+      visibility: hidden;
     }
     100% {
       transform: translateX(0%);
