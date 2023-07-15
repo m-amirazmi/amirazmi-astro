@@ -16,24 +16,23 @@
     justify-content: center;
     gap: 2.4rem;
     text-align: center;
+  }
+  &-sub {
+    position: relative;
+    &::after {
+      content: "";
+      width: 1.6rem;
+      height: 0.3rem;
+      background-color: $color-primary;
+      position: absolute;
+      bottom: 0rem;
+      right: -1.8rem;
+      @include animate-blinking;
 
-    h5 {
-      position: relative;
-      &::after {
-        content: "";
-        width: 1.6rem;
-        height: 0.3rem;
-        background-color: $color-primary;
-        position: absolute;
-        bottom: 0rem;
-        right: -1.8rem;
-        @include animate-blinking;
-
-        @include screen-sm {
-          width: 1.2rem;
-          right: -1.4rem;
-          height: 0.2rem;
-        }
+      @include screen-sm {
+        width: 1.2rem;
+        right: -1.4rem;
+        height: 0.2rem;
       }
     }
   }
