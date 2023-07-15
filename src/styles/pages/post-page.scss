@@ -3,11 +3,41 @@
 @import "../components/text.scss";
 
 .post-page {
-  &-title {
+  &-header {
     @include border;
-    @include padding-md;
-    margin-bottom: 3.6rem;
-    background-color: $color-white;
+    @include padding-md-inline;
+    @include padding-sm-vertical;
+    margin-bottom: $spacing-md;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-white;
+      z-index: -20;
+    }
+    @include screen-sm {
+      @include padding-sm;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &-title {
+    margin-bottom: $spacing-xs;
+  }
+
+  &-labels {
+    display: flex;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+
+    span {
+      font-size: 1.4rem;
+    }
   }
 
   &-content {
@@ -17,10 +47,16 @@
 
   &-article {
     width: 70%;
+    @include screen-sm {
+      width: 100%;
+    }
   }
 
   &-sidebar {
     width: 30%;
+    @include screen-sm {
+      display: none;
+    }
   }
 
   pre {

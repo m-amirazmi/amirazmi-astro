@@ -2,14 +2,14 @@
 import Text from "./Text.astro";
 
 export interface Props {
-  class: string;
+  class?: string;
 }
 
 const { class: c } = Astro.props as Props;
 
-const classes = `article`;
+const classes = `article-sidebar ${c}`;
 ---
 
-<aside>
+<aside class={classes}>
   <Text tag="h3">This is sidebar</Text>
 </aside>

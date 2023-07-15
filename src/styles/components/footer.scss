@@ -1,0 +1,10 @@
+.footer {
+  @include padding-md-vertical;
+
+  &-text {
+    @include border;
+    @include padding-md;
+    background-color: $color-white;
+    text-align: center;
+  }
+}

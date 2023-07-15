@@ -1,0 +1,5 @@
+.article-sidebar {
+  @include border;
+  @include padding-md;
+  background-color: $color-white;
+}
