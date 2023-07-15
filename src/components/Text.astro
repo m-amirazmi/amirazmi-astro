@@ -9,6 +9,7 @@ export interface Props {
   uppercase?: boolean;
   lowercase?: boolean;
   capitalize?: boolean;
+  ariaLabel?: string;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   capitalize,
   href,
   target,
+  ariaLabel,
 } = Astro.props as Props;
 const Component = tag;
 
@@ -44,6 +46,7 @@ const classes = `text text-${fontSize} font-${weight} ${
 const attrs = {
   href,
   target,
+  "aria-label": ariaLabel,
 };
 ---
 
