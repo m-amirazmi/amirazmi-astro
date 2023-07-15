@@ -49,15 +49,23 @@
   }
 
   &-menulist {
-    @include border;
     display: block;
-    position: fixed;
-    top: 0;
-    left: 100%;
-    height: 100%;
+    position: relative;
+
     width: 100%;
     background-color: $color-white;
     z-index: 10;
+
+    &::after {
+      content: "";
+      background-color: $color-white;
+      top: -5.6rem;
+      left: 102%;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
 
     &-slidein {
       @include animate-slide-in;
@@ -67,8 +75,13 @@
     }
 
     &-container {
-      height: 100%;
+      position: absolute;
+      @include border;
+      background-color: $color-white;
+      height: calc(100vh - 4rem);
       width: 100%;
+      top: -4rem;
+      left: 105%;
       display: flex;
       align-items: center;
       justify-content: center;
