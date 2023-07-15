@@ -13,7 +13,7 @@ const labels = collectLabels(posts);
 <Layout>
   <Container size="xl" inlinePadding="sm">
     <div class="blog">
-      <Text tag="h1">My Blog Posts</Text>
+      <Text tag="h1" weight="bold">My Blog Posts</Text>
       <div class="blog-posts">
         {
           posts.map(({ frontmatter }) => (
@@ -21,7 +21,7 @@ const labels = collectLabels(posts);
               <Card 
                 title={frontmatter.title} 
                 subtitle={`Posted on ${new Date(frontmatter.date).toLocaleDateString()}`}
-                summary={frontmatter.excerpt}
+                summary={`${frontmatter.excerpt.substring(0,170)} ...`}
                 tags={frontmatter.label.split(", ")}
               >
               </Card>

@@ -29,12 +29,3 @@
     text-transform: $value;
   }
 }
-
-.text-truncate {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Number of lines to show */
-  -webkit-box-orient: vertical;
-  max-height: calc(1.2em * 3); /* Line height multiplied by number of lines */
-  word-wrap: break-word;
-}

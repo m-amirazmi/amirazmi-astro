@@ -11,12 +11,12 @@ const { title, summary, subtitle, tags = [] } = Astro.props as Props;
 ---
 
 <figure class="card">
-	<Text tag="h3" size="xl" weight="semibold" class="card-title">{title}</Text>
+	<Text tag="h2" size="xl" weight="semibold" class="card-title">{title}</Text>
 	<Text tag="p" size="xs" class="card-subtitle">{subtitle}</Text>
 	<div class="card-tags">
 		{tags.length > 0 && tags.map((tag) => <Tag>{tag}</Tag>)}
 	</div>
-	<Text tag="p" size="sm" class="text-truncate">{summary}</Text>
+	<Text tag="p" size="sm">{summary}</Text>
 	<slot />
 	<div class="card-bg"></div>
 </figure>
