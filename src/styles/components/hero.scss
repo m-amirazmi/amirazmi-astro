@@ -3,7 +3,7 @@
   height: 100vh;
 
   @include screen-sm {
-    @include padding-md;
+    @include padding-sm;
   }
 
   &-container {
