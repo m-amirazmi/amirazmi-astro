@@ -1,18 +1,19 @@
 ---
 import Card from "../../components/Card.astro";
 import Container from "../../components/Container.astro";
+import PageHeader from "../../components/PageHeader.astro";
 import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
-import { collectLabels } from "../../utils/helpers";
 import '../../styles/pages/blog-page.scss';
+import '../../styles/pages/post-page.scss';
 
 const posts = await Astro.glob("../../content/posts/*.md");
 ---
 
-<Layout>
+<Layout title="AA.DEV | My Blog Posts">
   <Container size="xl" inlinePadding="sm">
     <div class="blog">
-      <Text tag="h1" weight="bold">My Blog Posts</Text>
+      <PageHeader title="My Blog Posts"></PageHeader>
       <div class="blog-posts">
         {
           posts.map(({ frontmatter }) => (

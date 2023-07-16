@@ -1,8 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Text from "../../components/Text.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Container from "../../components/Container.astro";
+import "../../styles/pages/projects-page.scss";
 ---
 
 <Layout>
-  <Text>Projects Page</Text>
+  <Container size="xl" inlinePadding="sm">
+    <PageHeader title="My Projects" />
+  </Container>
 </Layout>

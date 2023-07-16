@@ -1,0 +1,19 @@
+---
+import Tag from "./Tag.astro";
+import Text from "./Text.astro";
+export interface Props {
+  title: string;
+  labels?: string[];
+}
+
+const { title, labels = [] } = Astro.props as Props;
+---
+
+<header class="page-header">
+  <Text tag="h1" weight="bold" class="page-header-title">
+    {title}
+  </Text>
+  {labels.length > 0 && <div class="page-header-labels">
+    {labels.map((label) => <Tag>{label}</Tag>)}
+  </div>}
+</header>

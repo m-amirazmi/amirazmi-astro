@@ -2,4 +2,8 @@
   @include border;
   @include padding-md;
   background-color: $color-white;
+  height: 60rem;
+  position: sticky;
+  top: 14rem;
+  right: 0;
 }

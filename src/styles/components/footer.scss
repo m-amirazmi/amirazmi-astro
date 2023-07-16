@@ -1,5 +1,6 @@
 .footer {
   @include padding-md-vertical;
+  margin-top: auto;
 
   &-text {
     @include border;

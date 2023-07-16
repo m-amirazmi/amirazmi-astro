@@ -6,6 +6,7 @@ import Article from "../../components/Article.astro";
 import "../../styles/pages/post-page.scss";
 import ArticleSidebar from "../../components/ArticleSidebar.astro";
 import Tag from "../../components/Tag.astro";
+import PageHeader from "../../components/PageHeader.astro";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../content/posts/*.md");
@@ -23,14 +24,7 @@ const labels = frontmatter.label.split(", ");
 <Layout>
   <div class="post-page">
     <Container size="xl" inlinePadding="sm">
-      <div class="post-page-header">
-        <Text tag="h1" weight="bold" class="post-page-title">
-          {frontmatter.title}
-        </Text>
-        <div class="post-page-labels">
-          {labels.map((label) => <Tag>{label}</Tag>)}
-        </div>
-      </div>
+      <PageHeader title={frontmatter.title} labels={labels} />
       <div class="post-page-content">
         <Article class="post-page-article">
           <Content />

@@ -1,5 +1,11 @@
 ---
+import Container from "../../components/Container.astro";
+import PageHeader from "../../components/PageHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout>this is contact</Layout>
+<Layout>
+  <Container size="xl" inlinePadding="sm">
+    <PageHeader title="My Contact" />
+  </Container>
+</Layout>
