@@ -12,5 +12,16 @@
     @include screen-sm {
       gap: $spacing-sm;
     }
+
+    a {
+      &:focus,
+      &:active {
+        background-color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    }
   }
 }
