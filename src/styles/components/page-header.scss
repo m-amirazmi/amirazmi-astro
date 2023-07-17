@@ -26,9 +26,10 @@
 
   &-labels {
     display: flex;
-    gap: $spacing-sm;
+    gap: 0.8rem;
     margin-top: $spacing-xs;
     margin-bottom: $spacing-sm;
+    flex-wrap: wrap;
 
     span {
       font-size: 1.4rem;
