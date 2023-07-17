@@ -15,7 +15,8 @@
 
     a {
       &:focus,
-      &:active {
+      &:active,
+      &:focus-within {
         background-color: transparent;
         -webkit-user-select: none;
         -moz-user-select: none;
