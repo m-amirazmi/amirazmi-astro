@@ -10,6 +10,10 @@
     @include padding-sm;
   }
 
+  &-title {
+    margin-bottom: $spacing-xs;
+  }
+
   &-bg {
     position: absolute;
     height: 100%;

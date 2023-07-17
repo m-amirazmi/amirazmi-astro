@@ -6,7 +6,11 @@
   .text-#{$key} {
     font-size: $value;
     font-family: $font-primary;
-    line-height: 150%;
+    @if $key == "xl" or $key == "2xl" or $key == "3xl" or $key == "4xl" {
+      line-height: 120%;
+    } @else {
+      line-height: 150%;
+    }
   }
 }
 
