@@ -11,3 +11,6 @@ export const collectLabels = (posts) => {
 
   return labels;
 };
+
+export const filteredStatus = (posts, status = "published") =>
+  posts.filter((p) => p.frontmatter.status === status);

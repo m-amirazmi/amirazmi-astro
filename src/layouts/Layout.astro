@@ -5,11 +5,6 @@ import NavbarMobile from "../components/NavbarMobile.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/index.scss";
 
-export interface Props {
-	title?: string;
-}
-
-const { title = "AA.DEV | Welcome To My Digital Self" } = Astro.props;
 const { pathname } = Astro.url;
 const isHomepage = pathname === "/";
 ---
@@ -17,21 +12,14 @@ const isHomepage = pathname === "/";
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<slot name="meta-tags" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
 		/>
-		<script
-			src="https://kit.fontawesome.com/fbbec297e2.js"
-			crossorigin="anonymous"></script>
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 	</head>
 	<body>
 		{isHomepage && <Navbar />}

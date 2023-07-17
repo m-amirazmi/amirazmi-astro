@@ -1,23 +1,31 @@
 ---
 import Card from "../../components/Card.astro";
 import Container from "../../components/Container.astro";
+import MetaTags from "../../components/MetaTags.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
 import '../../styles/pages/blog-page.scss';
 import '../../styles/pages/post-page.scss';
+import { filteredStatus } from "../../utils/helpers";
+import { MetaTagsProps } from "../../utils/types";
 
 const posts = await Astro.glob("../../content/posts/*.mdx");
 const convertDateTimeToEpoch = (date) => new Date(date).getTime()
-const sortedPosts = posts.sort((a,b) => {
+const sortedPosts = filteredStatus(posts).sort((a,b) => {
   const aTime = convertDateTimeToEpoch(a.frontmatter.date)
   const bTime = convertDateTimeToEpoch(b.frontmatter.date)
   if(aTime < bTime) return 1
   return -1
 })
+
+const metaTags: MetaTagsProps = {
+  title:"Blog Posts",
+};
 ---
 
-<Layout title="AA.DEV | My Blog Posts">
+<Layout>
+  <MetaTags slot="meta-tags" {...metaTags} />
   <Container size="xl" inlinePadding="sm">
     <div class="blog">
       <PageHeader title="My Blog Posts"></PageHeader>

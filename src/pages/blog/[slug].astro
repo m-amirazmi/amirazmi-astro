@@ -1,17 +1,18 @@
 ---
 import Container from "../../components/Container.astro";
-import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
 import Article from "../../components/Article.astro";
-import "../../styles/pages/post-page.scss";
 import ArticleSidebar from "../../components/ArticleSidebar.astro";
-import Tag from "../../components/Tag.astro";
 import PageHeader from "../../components/PageHeader.astro";
+import { filteredStatus } from "../../utils/helpers";
+import MetaTags from "../../components/MetaTags.astro";
+import "../../styles/pages/post-page.scss";
+import { MetaTagsProps } from "../../utils/types";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../content/posts/*.mdx");
 
-  return posts.map((post) => ({
+  return filteredStatus(posts).map((post) => ({
     params: { slug: post.frontmatter.slug },
     props: { post },
   }));
@@ -19,9 +20,17 @@ export async function getStaticPaths() {
 
 const { Content, frontmatter } = Astro.props.post;
 const labels = frontmatter.label.split(", ");
+const { title, excerpt, author, label } = frontmatter;
+const metaTags: MetaTagsProps = {
+  title,
+  keywords: label,
+  author,
+  description: excerpt,
+};
 ---
 
 <Layout>
+  <MetaTags slot="meta-tags" {...metaTags} />
   <div class="post-page">
     <Container size="xl" inlinePadding="sm">
       <PageHeader title={frontmatter.title} labels={labels} />
