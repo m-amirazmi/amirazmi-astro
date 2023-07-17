@@ -7,7 +7,8 @@ import PageHeader from "../../components/PageHeader.astro";
 import { filteredStatus } from "../../utils/helpers";
 import MetaTags from "../../components/MetaTags.astro";
 import "../../styles/pages/post-page.scss";
-import { MetaTagsProps } from "../../utils/types";
+import { MetaTagsProps, PostFrontMatter } from "../../utils/types";
+import { getRelatedPosts } from "../../utils/helpers";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../content/posts/*.mdx");
@@ -19,8 +20,14 @@ export async function getStaticPaths() {
 }
 
 const { Content, frontmatter } = Astro.props.post;
+const { slug } = Astro.params;
+const { title, excerpt, author, label, related } =
+  frontmatter as PostFrontMatter;
 const labels = frontmatter.label.split(", ");
-const { title, excerpt, author, label } = frontmatter;
+
+const posts = await Astro.glob("../../content/posts/*.mdx");
+const relatedPosts = getRelatedPosts(related, posts);
+
 const metaTags: MetaTagsProps = {
   title,
   keywords: label,
@@ -38,7 +45,7 @@ const metaTags: MetaTagsProps = {
         <Article class="post-page-article">
           <Content />
         </Article>
-        <ArticleSidebar class="post-page-sidebar" />
+        <ArticleSidebar posts={relatedPosts} class="post-page-sidebar" />
       </div>
     </Container>
   </div>

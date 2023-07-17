@@ -1,13 +1,34 @@
 ---
+import { formatDate } from "../utils/helpers";
+import { PostFrontMatter } from "../utils/types";
+import Card from "./Card.astro";
 import Text from "./Text.astro";
 
 export interface Props {
   class?: string;
+  posts: PostFrontMatter[];
 }
 
-const { class: c } = Astro.props as Props;
+const { class: c, posts } = Astro.props as Props;
 
 const classes = `article-sidebar ${c}`;
 ---
 
-<aside class={classes}></aside>
+<aside class={classes}>
+  <div class="article-sidebar-related">
+    {
+      posts.length > 0 &&
+        posts.map((p) => (
+          <Text tag="a" target="_self" href={`/blog/${p.slug}`}>
+            <Card
+              title={p.title}
+              subtitle={`Posted on ${formatDate(p.date)}`}
+              tags={[...p.label.split(", ").sort().slice(0, 2), "+"]}
+              titleTag="span"
+              titleSize="md"
+            />
+            </Text>
+        ))
+    }
+  </div>
+</aside>

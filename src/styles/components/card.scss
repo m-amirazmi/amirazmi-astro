@@ -3,8 +3,11 @@
   @include padding-md;
   @include shadow-on-hover(0.8);
   display: block;
-  height: 100%;
   position: relative;
+
+  &-fullheight {
+    height: 100%;
+  }
 
   @include screen-sm {
     @include padding-sm;
@@ -31,9 +34,12 @@
   }
 
   &-tags {
-    margin-bottom: 1.6rem;
     display: flex;
     gap: 0.8rem;
     flex-wrap: wrap;
+  }
+
+  &-summary {
+    margin-top: $spacing-sm;
   }
 }

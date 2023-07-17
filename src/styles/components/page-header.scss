@@ -31,6 +31,10 @@
     margin-bottom: $spacing-sm;
     flex-wrap: wrap;
 
+    @include screen-sm {
+      margin-bottom: $spacing-xs;
+    }
+
     span {
       font-size: 1.4rem;
     }

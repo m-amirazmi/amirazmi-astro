@@ -1,9 +1,16 @@
 .article-sidebar {
-  @include border;
-  @include padding-md;
-  background-color: $color-white;
-  height: 60rem;
   position: sticky;
   top: 14rem;
   right: 0;
+
+  &-related {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    cursor: pointer;
+
+    @include screen-sm {
+      gap: $spacing-sm;
+    }
+  }
 }

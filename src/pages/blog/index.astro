@@ -7,7 +7,7 @@ import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
 import '../../styles/pages/blog-page.scss';
 import '../../styles/pages/post-page.scss';
-import { filteredStatus } from "../../utils/helpers";
+import { filteredStatus, formatDate } from "../../utils/helpers";
 import { MetaTagsProps } from "../../utils/types";
 
 const posts = await Astro.glob("../../content/posts/*.mdx");
@@ -35,7 +35,7 @@ const metaTags: MetaTagsProps = {
             <Text tag="a" class="blog-posts-item" size="sm" href={`/blog/${frontmatter.slug}`}>
               <Card 
                 title={frontmatter.title} 
-                subtitle={`Posted on ${new Date(frontmatter.date).toLocaleDateString('en-MY', { year: 'numeric', month: 'long', day: 'numeric' })}`}
+                subtitle={`Posted on ${formatDate(frontmatter.date)}`}
                 summary={`${frontmatter.excerpt.substring(0,170)} ...`}
                 tags={frontmatter.label.split(", ")}
               >

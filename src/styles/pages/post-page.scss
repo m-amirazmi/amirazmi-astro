@@ -6,6 +6,10 @@
   &-content {
     display: flex;
     gap: $spacing-md;
+    @include screen-sm {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
   }
 
   &-article {
@@ -18,7 +22,7 @@
   &-sidebar {
     width: 30%;
     @include screen-sm {
-      display: none;
+      width: 100%;
     }
   }
 
