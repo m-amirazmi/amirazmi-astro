@@ -14,6 +14,6 @@ const { title, labels = [] } = Astro.props as Props;
     {title}
   </Text>
   {labels.length > 0 && <div class="page-header-labels">
-    {labels.map((label) => <Tag>{label}</Tag>)}
+    {labels.sort().map((label) => <Tag>{label}</Tag>)}
   </div>}
 </header>
