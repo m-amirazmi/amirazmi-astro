@@ -23,7 +23,7 @@ const { Content, frontmatter } = Astro.props.post;
 const { slug } = Astro.params;
 const { title, excerpt, author, label, related } =
   frontmatter as PostFrontMatter;
-const labels = frontmatter.label.split(", ");
+const labels = frontmatter.label;
 
 const posts = await Astro.glob("../../content/posts/*.mdx");
 const relatedPosts = getRelatedPosts(related, posts);

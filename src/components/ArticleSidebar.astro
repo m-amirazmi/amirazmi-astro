@@ -23,7 +23,7 @@ const classes = `article-sidebar ${c}`;
             <Card
               title={p.title}
               subtitle={`Posted on ${formatDate(p.date)}`}
-              tags={[...p.label.split(", ").sort().slice(0, 2), "+"]}
+              tags={[...[...p.label].sort().slice(0, 2), "+"]}
               titleTag="span"
               titleSize="md"
             />

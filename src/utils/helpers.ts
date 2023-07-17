@@ -1,7 +1,7 @@
 export const collectLabels = (posts) => {
   const labels: string[] = [];
   posts.forEach(({ frontmatter }) => {
-    const postLabels = frontmatter.label.split(", ");
+    const postLabels = frontmatter.label;
     postLabels.forEach((label) => {
       if (!labels.includes(label)) {
         labels.push(label);
@@ -16,7 +16,7 @@ export const filteredStatus = (posts, status = "published") =>
   posts.filter((p) => p.frontmatter.status === status);
 
 export const getRelatedPosts = (relatedSlugs: string, posts: any[]) => {
-  const slugs = relatedSlugs.split(", ");
+  const slugs = relatedSlugs;
   return posts
     .map((p) => {
       if (slugs.includes(p.frontmatter.slug)) return p.frontmatter;

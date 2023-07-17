@@ -37,7 +37,7 @@ const metaTags: MetaTagsProps = {
                 title={frontmatter.title} 
                 subtitle={`Posted on ${formatDate(frontmatter.date)}`}
                 summary={`${frontmatter.excerpt.substring(0,170)} ...`}
-                tags={frontmatter.label.split(", ")}
+                tags={frontmatter.label}
               >
               </Card>
             </Text>
