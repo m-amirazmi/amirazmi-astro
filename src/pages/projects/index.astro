@@ -3,9 +3,16 @@ import Layout from "../../layouts/Layout.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Container from "../../components/Container.astro";
 import "../../styles/pages/projects-page.scss";
+import MetaTags from "../../components/MetaTags.astro";
+import { MetaTagsProps } from "../../utils/types";
+
+const metaTags: MetaTagsProps = {
+  title: "My Projects & Experiments",
+};
 ---
 
 <Layout>
+  <MetaTags slot="meta-tags" {...metaTags} />
   <Container size="xl" inlinePadding="sm">
     <PageHeader title="My Projects" />
   </Container>

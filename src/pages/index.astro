@@ -3,9 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Text from "../components/Text.astro";
 import Container from "../components/Container.astro";
+import MetaTags from "../components/MetaTags.astro";
+import { MetaTagsProps } from "../utils/types";
+
+const metaTags: MetaTagsProps = {
+	title: "Welcome To My Digital Self",
+};
 ---
 
 <Layout>
+	<MetaTags slot="meta-tags" {...metaTags} />
 	<Hero />
 	<div id="main">
 		<Container size="xl" inlinePadding="sm" />
