@@ -25,19 +25,3 @@ body {
     background-size: 22px 22px;
   }
 }
-
-/* Remove default focus styles on mobile */
-@media (hover: hover) {
-  /* Styles for non-touch devices (e.g., desktop) */
-  a:focus {
-    outline: none; /* Remove the default focus outline */
-  }
-}
-
-@media (hover: none) {
-  /* Styles for touch devices (e.g., mobile) */
-  a:focus {
-    background-color: transparent; /* Remove the default background color */
-    outline: none; /* Remove the default focus outline */
-  }
-}
