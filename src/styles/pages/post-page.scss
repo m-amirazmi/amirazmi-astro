@@ -40,7 +40,7 @@
   code {
     background-color: rgba(204, 204, 204, 0.4);
     span {
-      font-family: "Fira Code";
+      font-family: $font-code;
       font-size: 1.6rem;
       background-color: $color-bg-code;
       @extend .font-thin;
