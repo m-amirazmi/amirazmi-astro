@@ -12,16 +12,9 @@
       gap: $spacing-sm;
     }
 
-    a {
-      &:focus,
-      &:active,
-      &:focus-within {
-        background-color: transparent;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+    &-item {
+      width: 100%;
+      display: block;
     }
   }
 }
