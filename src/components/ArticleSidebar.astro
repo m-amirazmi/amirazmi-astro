@@ -10,6 +10,7 @@ export interface Props {
 }
 
 const { class: c, posts } = Astro.props as Props;
+// tags={[...[...p.label].sort().slice(0, 2), "+"]}
 
 const classes = `article-sidebar ${c}`;
 ---
@@ -23,11 +24,11 @@ const classes = `article-sidebar ${c}`;
             <Card
               title={p.title}
               subtitle={`Posted on ${formatDate(p.date)}`}
-              tags={[...[...p.label].sort().slice(0, 2), "+"]}
+              tags={p.label}
               titleTag="span"
               titleSize="md"
             />
-            </Text>
+          </Text>
         ))
     }
   </div>

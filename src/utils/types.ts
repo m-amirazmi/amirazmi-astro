@@ -12,7 +12,7 @@ export interface PostFrontMatter {
   excerpt: string;
   date: Date;
   author: string;
-  label: string;
+  label: string[];
   status: string;
   related?: string;
 }
