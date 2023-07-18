@@ -15,7 +15,6 @@ const { class: c, posts } = Astro.props as Props;
 const classes = `article-sidebar ${c}`;
 ---
 
-<aside class={classes}>
   <div class="article-sidebar-related">
     {
       posts.length > 0 &&
@@ -32,4 +31,3 @@ const classes = `article-sidebar ${c}`;
         ))
     }
   </div>
-</aside>
