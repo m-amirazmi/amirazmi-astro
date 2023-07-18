@@ -4,20 +4,12 @@ import Text from "./Text.astro";
 export interface Props {
   title: string;
   labels?: string[];
-  image?: string;
 }
 
-const { title, labels = [], image } = Astro.props as Props;
+const { title, labels = [] } = Astro.props as Props;
 ---
 
 <header class="page-header">
-  {
-    image && (
-      <div class="page-header-image">
-        <img src={image} alt={title} />
-      </div>
-    )
-  }
   <Text tag="h1" weight="bold" class="page-header-title">
     {title}
   </Text>

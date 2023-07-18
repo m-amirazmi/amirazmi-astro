@@ -5,41 +5,45 @@ import MetaTags from "../../components/MetaTags.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
-import '../../styles/pages/blog-page.scss';
-import '../../styles/pages/post-page.scss';
+import "../../styles/pages/blog-page.scss";
+import "../../styles/pages/post-page.scss";
 import { filteredStatus, formatDate } from "../../utils/helpers";
 import { MetaTagsProps } from "../../utils/types";
 
 const posts = await Astro.glob("../../content/posts/*.mdx");
-const convertDateTimeToEpoch = (date) => new Date(date).getTime()
-const sortedPosts = filteredStatus(posts).sort((a,b) => {
-  const aTime = convertDateTimeToEpoch(a.frontmatter.date)
-  const bTime = convertDateTimeToEpoch(b.frontmatter.date)
-  if(aTime < bTime) return 1
-  return -1
-})
+const convertDateTimeToEpoch = (date) => new Date(date).getTime();
+const sortedPosts = filteredStatus(posts).sort((a, b) => {
+  const aTime = convertDateTimeToEpoch(a.frontmatter.date);
+  const bTime = convertDateTimeToEpoch(b.frontmatter.date);
+  if (aTime < bTime) return 1;
+  return -1;
+});
 
 const metaTags: MetaTagsProps = {
-  title:"My Stories & Sharing",
+  title: "My Stories & Sharing",
 };
 ---
 
 <Layout>
   <MetaTags slot="meta-tags" {...metaTags} />
-  <Container size="xl" inlinePadding="sm">
+  <Container size="xl">
     <div class="blog">
-      <PageHeader title="My Blog Posts"></PageHeader>
+      <PageHeader title="My Blog Posts" />
       <div class="blog-posts">
         {
           sortedPosts.map(({ frontmatter }) => (
-            <Text tag="a" class="blog-posts-item" size="sm" href={`/blog/${frontmatter.slug}`}>
-              <Card 
-                title={frontmatter.title} 
+            <Text
+              tag="a"
+              class="blog-posts-item"
+              size="sm"
+              href={`/blog/${frontmatter.slug}`}
+            >
+              <Card
+                title={frontmatter.title}
                 subtitle={`Posted on ${formatDate(frontmatter.date)}`}
-                summary={`${frontmatter.excerpt.substring(0,170)} ...`}
+                summary={`${frontmatter.excerpt.substring(0, 170)} ...`}
                 tags={frontmatter.label.sort()}
-              >
-              </Card>
+              ></Card>
             </Text>
           ))
         }
@@ -47,4 +51,3 @@ const metaTags: MetaTagsProps = {
     </div>
   </Container>
 </Layout>
-
