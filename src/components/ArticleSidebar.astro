@@ -10,11 +10,11 @@ export interface Props {
 }
 
 const { class: c, posts } = Astro.props as Props;
-// tags={[...[...p.label].sort().slice(0, 2), "+"]}
 
 const classes = `article-sidebar ${c}`;
 ---
 
+<aside class={classes}>
   <div class="article-sidebar-related">
     {
       posts.length > 0 &&
@@ -31,3 +31,4 @@ const classes = `article-sidebar ${c}`;
         ))
     }
   </div>
+</aside>

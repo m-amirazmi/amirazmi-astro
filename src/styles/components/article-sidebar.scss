@@ -3,10 +3,9 @@
     position: sticky;
     top: 14rem;
     right: 0;
-    display: flex;
+    display: block;
     flex-direction: column;
     gap: $spacing-md;
-    cursor: pointer;
 
     @include screen-sm {
       gap: $spacing-sm;
@@ -15,5 +14,6 @@
   &-item {
     width: 100%;
     display: block;
+    margin-bottom: $spacing-md;
   }
 }
