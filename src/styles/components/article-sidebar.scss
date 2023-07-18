@@ -11,10 +11,9 @@
     @include screen-sm {
       gap: $spacing-sm;
     }
-
-    &-item {
-      width: 100%;
-      display: block;
-    }
+  }
+  &-item {
+    width: 100%;
+    display: block;
   }
 }
