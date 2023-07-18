@@ -15,5 +15,5 @@ export interface PostFrontMatter {
   label: string[];
   status: string;
   related?: string;
-  image: string;
+  imageUrl: string;
 }

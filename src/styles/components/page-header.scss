@@ -22,8 +22,12 @@
 
   &-image {
     width: 100%;
-    height: 20rem;
+    height: 50rem;
     margin-bottom: $spacing-sm;
+    @include screen-sm {
+      margin-bottom: $spacing-xs;
+      height: 20rem;
+    }
     img {
       width: 100%;
       height: 100%;

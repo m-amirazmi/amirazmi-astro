@@ -8,14 +8,13 @@ export interface Props {
 }
 
 const { title, labels = [], image } = Astro.props as Props;
-console.log(image);
 ---
 
 <header class="page-header">
   {
     image && (
       <div class="page-header-image">
-        <img src={`/images/${image}`} alt={title} />
+        <img src={image} alt={title} />
       </div>
     )
   }
