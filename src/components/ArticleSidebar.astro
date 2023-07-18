@@ -20,7 +20,7 @@ const classes = `article-sidebar ${c}`;
     {
       posts.length > 0 &&
         posts.map((p) => (
-          <Text tag="a" target="_self" href={`/blog/${p.slug}`}>
+          <a target="_self" href={`/blog/${p.slug}`}>
             <Card
               title={p.title}
               subtitle={`Posted on ${formatDate(p.date)}`}
@@ -28,7 +28,7 @@ const classes = `article-sidebar ${c}`;
               titleTag="span"
               titleSize="md"
             />
-          </Text>
+            </a>
         ))
     }
   </div>
