@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar.astro";
 import NavbarMain from "../components/NavbarMain.astro";
 import NavbarMobile from "../components/NavbarMobile.astro";
 import Footer from "../components/Footer.astro";
+import "@fontsource-variable/quicksand";
+import "@fontsource-variable/fira-code";
 import "../styles/index.scss";
 
 const { pathname } = Astro.url;
@@ -11,31 +13,25 @@ const isHomepage = pathname === "/";
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<slot name="meta-tags" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
-		/>
-		<meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
-		{isHomepage && <Navbar />}
-		<NavbarMain />
-		<NavbarMobile />
-		<slot />
-		<Footer />
-		<script define:vars={{ isHomepage }}>
-			function showNavbarMainIfNotHomepage() {
-				const navbarMainEl = document.querySelector(".navbar-main");
-				const navbarMobile = document.querySelector(".navbar-mobile");
-				if (!navbarMainEl || isHomepage) return;
-				navbarMainEl.classList.remove("navbar-hidden");
-				navbarMobile.classList.add("navbar-mobile-sticky");
-			}
-			showNavbarMainIfNotHomepage();
-		</script>
-	</body>
+  <head>
+    <slot name="meta-tags" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    {isHomepage && <Navbar />}
+    <NavbarMain />
+    <NavbarMobile />
+    <slot />
+    <Footer />
+    <script define:vars={{ isHomepage }}>
+      function showNavbarMainIfNotHomepage() {
+        const navbarMainEl = document.querySelector(".navbar-main");
+        const navbarMobile = document.querySelector(".navbar-mobile");
+        if (!navbarMainEl || isHomepage) return;
+        navbarMainEl.classList.remove("navbar-hidden");
+        navbarMobile.classList.add("navbar-mobile-sticky");
+      }
+      showNavbarMainIfNotHomepage();
+    </script>
+  </body>
 </html>
