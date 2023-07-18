@@ -7,6 +7,9 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    assets: true,
+  },
   site: "https://amirazmi.dev",
-  integrations: [robotsTxt(), mdx(), react(), sitemap()]
+  integrations: [robotsTxt(), mdx(), react(), sitemap()],
 });

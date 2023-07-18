@@ -2,25 +2,32 @@
 export interface Props {
   title: string;
   description?: string;
-  keywords?: string;
+  keywords?: string[];
   author?: string;
   imageUrl?: string;
 }
 
 const url = Astro.url;
 
-const { title = "AA.DEV | Welcome To My Digital Self", description, keywords, author, imageUrl } = Astro.props as Props;
+const {
+  title = "AA.DEV | Welcome To My Digital Self",
+  description,
+  keywords,
+  author,
+  imageUrl,
+} = Astro.props as Props;
 ---
+
 <meta charset="UTF-8" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="language" content="en">
-<meta name="referrer" content="no-referrer">
+<meta name="language" content="en" />
+<meta name="referrer" content="no-referrer" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 {description && <meta name="description" content={description} />}
-{keywords && <meta name="keywords" content={keywords} />}
-{author &&<meta name="author" content={author} />}
+{keywords && <meta name="keywords" content={keywords.toString()} />}
+{author && <meta name="author" content={author} />}
 {url && <link rel="canonical" href={url} />}
 {title && <meta property="og:title" content={title} />}
 {description && <meta property="og:description" content={description} />}

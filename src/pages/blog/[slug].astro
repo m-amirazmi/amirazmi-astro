@@ -20,8 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { Content, frontmatter } = Astro.props.post;
-const { slug } = Astro.params;
-const { title, excerpt, author, label, related } =
+const { title, excerpt, author, label, related, image } =
   frontmatter as PostFrontMatter;
 const labels = frontmatter.label;
 
@@ -40,7 +39,7 @@ const metaTags: MetaTagsProps = {
   <MetaTags slot="meta-tags" {...metaTags} />
   <div class="post-page">
     <Container size="xl" inlinePadding="sm">
-      <PageHeader title={frontmatter.title} labels={labels} />
+      <PageHeader title={frontmatter.title} labels={labels} image={image} />
       <div class="post-page-content">
         <Article class="post-page-article">
           <Content />

@@ -1,7 +1,7 @@
 export interface MetaTagsProps {
   title: string;
   description?: string;
-  keywords?: string;
+  keywords?: string[];
   author?: string;
   imageUrl?: string;
 }
@@ -15,4 +15,5 @@ export interface PostFrontMatter {
   label: string[];
   status: string;
   related?: string;
+  image: string;
 }
