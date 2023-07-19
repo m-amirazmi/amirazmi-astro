@@ -24,15 +24,8 @@
       @include border;
     }
     .navbar-mobile-hamburger {
-      display: flex;
-      align-items: center;
       // border-left: 1px solid $color-dark;
       @include padding-xs-vertical;
-      gap: $spacing-sm;
-
-      span {
-        font-size: 0;
-      }
     }
   }
 
@@ -53,8 +46,16 @@
 
   &-hamburger {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
     @include padding-sm-vertical;
     @include padding-sm-inline;
+
+    span {
+      font-size: 0;
+    }
   }
 }
 
