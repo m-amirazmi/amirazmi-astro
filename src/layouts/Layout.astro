@@ -16,9 +16,8 @@ const isHomepage = pathname === "/";
   <head>
     <slot name="meta-tags" />
     <meta name="generator" content={Astro.generator} />
-    <script is:inline src="../js/theme-toggle.js"></script>
   </head>
-  <body>
+  <body class="dark">
     {isHomepage && <Navbar />}
     <NavbarMain />
     <NavbarMobile />

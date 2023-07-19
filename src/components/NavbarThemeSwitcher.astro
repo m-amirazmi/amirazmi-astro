@@ -4,16 +4,12 @@ import IconLight from "./icons/IconLight.astro";
 import IconDark from "./icons/IconDark.astro";
 ---
 
-<div onclick="
-toggleDark()
-">
-  <Text
-    tag="span"
-    class="navbar-theme-switcher navbar-theme-switcher-hidden navbar-theme-light"
-  >
-    <IconLight />
-  </Text>
-  <Text tag="span" class="navbar-theme-switcher navbar-theme-dark">
-    <IconDark />
-  </Text>
-</div>
+<Text
+  tag="span"
+  class="navbar-theme-switcher navbar-theme-switcher-hidden navbar-theme-light"
+>
+  <IconLight />
+</Text>
+<Text tag="span" class="navbar-theme-switcher navbar-theme-dark">
+  <IconDark />
+</Text>
