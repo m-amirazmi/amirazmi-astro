@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import Article from "../../components/Article.astro";
 import ArticleSidebar from "../../components/ArticleSidebar.astro";
 import PageHeader from "../../components/PageHeader.astro";
-import { filteredStatus } from "../../utils/helpers";
+import { filteredStatus, formatDate } from "../../utils/helpers";
 import MetaTags from "../../components/MetaTags.astro";
 import "../../styles/pages/post-page.scss";
 import { MetaTagsProps, PostFrontMatter } from "../../utils/types";
@@ -39,7 +39,11 @@ const metaTags: MetaTagsProps = {
   <MetaTags slot="meta-tags" {...metaTags} />
   <div class="post-page">
     <Container size="xl" inlinePadding="sm">
-      <PageHeader title={frontmatter.title} labels={labels} />
+      <PageHeader
+        title={frontmatter.title}
+        labels={labels}
+        dateCreated={formatDate(frontmatter.date)}
+      />
       <div class="post-page-content">
         <Article class="post-page-article">
           <Content />

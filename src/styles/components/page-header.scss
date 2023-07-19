@@ -28,7 +28,6 @@
     display: flex;
     gap: 0.8rem;
     margin-top: $spacing-sm;
-    margin-bottom: $spacing-sm;
     flex-wrap: wrap;
 
     @include screen-sm {
@@ -37,6 +36,18 @@
 
     span {
       font-size: 1.4rem;
+    }
+  }
+
+  &-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-xs;
+
+    @include screen-sm {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 }

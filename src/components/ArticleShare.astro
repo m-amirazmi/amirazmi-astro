@@ -1,0 +1,26 @@
+---
+---
+
+<div>
+  <input name="article-share" type="submit" value="Share This Article" />
+</div>
+
+<script type="text/partytown">
+const shareEl = document.querySelector('input[name="article-share"]');
+if (navigator.share) {
+  shareEl.addEventListener("click", async () => {
+    await navigator.share({
+      title: document.title,
+      url: window.location.href,
+    });
+  });
+} else {
+  shareEl.addEventListener("click", () => {
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      window.location.href
+    )}`;
+
+    window.open(shareUrl, "_blank");
+  });
+}
+</script>

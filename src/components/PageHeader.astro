@@ -4,22 +4,26 @@ import Text from "./Text.astro";
 export interface Props {
   title: string;
   labels?: string[];
+  dateCreated?: string;
 }
 
-const { title, labels = [] } = Astro.props as Props;
+const { title, labels = [], dateCreated } = Astro.props as Props;
 ---
 
 <header class="page-header">
   <Text tag="h1" weight="bold" class="page-header-title">
     {title}
   </Text>
-  {
-    labels.length > 0 && (
-      <div class="page-header-labels">
-        {labels.sort().map((label) => (
-          <Tag>{label}</Tag>
-        ))}
-      </div>
-    )
-  }
+  <div class="page-header-items">
+    {
+      labels.length > 0 && (
+        <div class="page-header-labels">
+          {labels.sort().map((label) => (
+            <Tag>{label}</Tag>
+          ))}
+        </div>
+      )
+    }
+    {dateCreated && <Text>{dateCreated}</Text>}
+  </div>
 </header>

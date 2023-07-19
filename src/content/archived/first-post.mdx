@@ -65,3 +65,31 @@ export default function Button({ children }: Props) {
 ## Conclusion
 
 Morbi interdum mi at nisl aliquam, eu tristique diam efficitur. Etiam at placerat elit. Phasellus a risus pretium, vulputate lectus ut, eleifend ex. Proin facilisis odio a magna sodales rutrum. Fusce venenatis mi ipsum, nec sagittis augue dapibus nec. Proin vel enim varius, sollicitudin mauris id, viverra tortor. Phasellus feugiat, ex commodo malesuada congue, elit ipsum lacinia velit, et fermentum nunc nunc id quam. Proin at quam vitae dui lobortis congue eu elementum quam. Ut mattis, magna vitae condimentum dignissim, ligula nisl fermentum lectus, sed lobortis magna lectus a enim. Quisque vitae purus rutrum, euismod urna auctor, egestas sem. Aenean dictum, nisl vel imperdiet mattis, urna justo varius massa, sed sollicitudin dui massa non eros. Sed mi elit, sagittis sit amet turpis in, faucibus consectetur justo. Nam non tincidunt tortor, vel pellentesque tellus. Integer posuere nisi vel porta malesuada. Etiam scelerisque quam arcu, quis lacinia magna accumsan ac.
+
+```tsx
+interface Data{
+  message: string
+}
+
+const message<Data> = ({message}) => {
+  return (
+    <div>{message}</div>
+  )
+}
+```
+
+1. Summary
+
+   - Preview how the component looks like
+   - Why we need infinite nested navigation menu
+   - Tools and libraries will be used (react, storybook, tailwind)
+   - CDD programming methodology approach
+   - Basic recursion concept
+
+2. Component Structure
+
+   - CDD approach encourage developer to build from small to large
+   - Define the component we need to build
+   - Prepare sample menu data
+
+3. Start Crafting

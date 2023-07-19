@@ -1,6 +1,7 @@
 ---
 import { formatDate } from "../utils/helpers";
 import { PostFrontMatter } from "../utils/types";
+import ArticleShare from "./ArticleShare.astro";
 import Card from "./Card.astro";
 import Text from "./Text.astro";
 
@@ -16,11 +17,17 @@ const classes = `article-sidebar ${c}`;
 
 <aside class={classes}>
   <div class="article-sidebar-container">
+    <ArticleShare />
     <div class="article-sidebar-related">
       {
         posts.length > 0 &&
           posts.map((p) => (
-            <Text tag="a" target="_self" href={`/blog/${p.slug}`} class="article-sidebar-item">
+            <Text
+              tag="a"
+              target="_self"
+              href={`/blog/${p.slug}`}
+              class="article-sidebar-item"
+            >
               <Card
                 title={p.title}
                 subtitle={`Posted on ${formatDate(p.date)}`}
