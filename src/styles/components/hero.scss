@@ -24,7 +24,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: $color-white;
+      background-color: $color-light;
       z-index: -100;
     }
   }
@@ -68,7 +68,7 @@
       @include padding-md-inline;
       cursor: pointer;
       position: relative;
-      background-color: $color-white;
+      background-color: $color-light;
       @include shadow-on-hover(0.6);
 
       @include screen-sm {

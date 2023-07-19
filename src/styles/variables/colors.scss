@@ -1,10 +1,24 @@
-$color-white: #f8fafc;
-$color-black: #0f172a;
-$color-primary: #eb4343;
-$color-bg-code: #24292e;
+$dark: #111827;
+$light: #f8fafc;
+$primary: #eb4343;
+$bg-grid-light: rgb(15, 23, 42, 0.5);
+$bg-grid-dark: rgba(248, 250, 252, 0.5);
 
-$colors: (
-  "black": $color-black,
-  "primary": $color-primary,
-  "white": $color-white,
-);
+:root {
+  --dark: #{$dark};
+  --light: #{$light};
+  --primary: #{$primary};
+  --bg-grid: #{$bg-grid-light};
+}
+
+$color-dark: var(--dark);
+$color-light: var(--light);
+$color-primary: var(--primary);
+$color-bg-grid: var(--bg-grid);
+$color-bg-code: #020617;
+
+body.dark {
+  --dark: #{$light};
+  --light: #{$dark};
+  --bg-grid: #{$bg-grid-dark};
+}

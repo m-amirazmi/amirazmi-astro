@@ -24,7 +24,7 @@
       @include border;
     }
     .navbar-mobile-hamburger {
-      border-left: 1px solid $color-black;
+      border-left: 1px solid $color-dark;
       @include padding-xs-vertical;
     }
   }
@@ -39,7 +39,7 @@
     position: relative;
     border-bottom: 0;
     display: flex;
-    background: $color-white;
+    background: $color-light;
     width: 100%;
     align-items: center;
   }

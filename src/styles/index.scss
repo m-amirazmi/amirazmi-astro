@@ -5,7 +5,7 @@
 
 body {
   min-height: 100vh;
-  background-color: $color-white;
+  background-color: $color-light;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -18,10 +18,10 @@ body {
     top: 0;
     left: 0;
     z-index: -500;
-    background-color: #f8fafc;
+    background-color: $color-light;
     opacity: 0.1;
-    background-image: linear-gradient(#0f172a 1.1px, transparent 1.1px),
-      linear-gradient(to right, #0f172a 1.1px, #f8fafc 1.1px);
+    background-image: linear-gradient($color-bg-grid 1.1px, transparent 1.1px),
+      linear-gradient(to right, $color-bg-grid 1.1px, $color-light 1.1px);
     background-size: 22px 22px;
   }
 }

@@ -18,15 +18,15 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: $color-white;
+    background-color: $color-light;
     top: 0;
     left: 0;
     z-index: -50;
   }
 
   &-subtitle {
-    color: $color-black;
-    opacity: 0.5;
+    color: $color-dark;
+    // opacity: 0.5;
     margin-bottom: 0.8rem;
   }
 

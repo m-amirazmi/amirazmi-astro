@@ -1,5 +1,5 @@
 .text {
-  color: $color-black;
+  color: $color-dark;
 }
 
 @each $key, $value in $font-sizes {

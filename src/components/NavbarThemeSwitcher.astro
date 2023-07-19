@@ -1,0 +1,53 @@
+---
+import Text from "./Text.astro";
+import IconLight from "./icons/IconLight.astro";
+import IconDark from "./icons/IconDark.astro";
+---
+
+<theme-switcher>
+  <Text
+    id="light"
+    tag="span"
+    class="navbar-theme-switcher navbar-theme-switcher-hidden"
+  >
+    <IconLight />
+  </Text>
+  <Text id="dark" tag="span" class="navbar-theme-switcher">
+    <IconDark />
+  </Text>
+</theme-switcher>
+
+<script>
+  class ThemeSwitcher extends HTMLElement {
+    constructor() {
+      super();
+
+      const bodyEl = document.body;
+      const iconLightEl = this.querySelector("#light");
+      const iconDarkEl = this.querySelector("#dark");
+
+      const bodyDarkClass = "dark";
+      const iconHiddenClass = "navbar-theme-switcher-hidden";
+
+      iconDarkEl.addEventListener("click", () => {
+        const checkBodyElDark = bodyEl.classList.contains(bodyDarkClass);
+        if (!checkBodyElDark) {
+          bodyEl.classList.add(bodyDarkClass);
+          iconLightEl.classList.remove(iconHiddenClass);
+          iconDarkEl.classList.add(iconHiddenClass);
+        }
+      });
+
+      iconLightEl.addEventListener("click", () => {
+        const checkBodyElDark = bodyEl.classList.contains(bodyDarkClass);
+        if (checkBodyElDark) {
+          bodyEl.classList.remove(bodyDarkClass);
+          iconLightEl.classList.add(iconHiddenClass);
+          iconDarkEl.classList.remove(iconHiddenClass);
+        }
+      });
+    }
+  }
+
+  customElements.define("theme-switcher", ThemeSwitcher);
+</script>
