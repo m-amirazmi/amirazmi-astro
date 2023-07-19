@@ -5,15 +5,23 @@ export interface Props {
   title: string;
   labels?: string[];
   dateCreated?: string;
+  subtitle?: string;
 }
 
-const { title, labels = [], dateCreated } = Astro.props as Props;
+const { title, labels = [], dateCreated, subtitle } = Astro.props as Props;
 ---
 
 <header class="page-header">
   <Text tag="h1" weight="bold" class="page-header-title">
     {title}
   </Text>
+  {
+    subtitle && (
+      <Text tag="p" size="sm" class="page-header-subtitle">
+        {subtitle}
+      </Text>
+    )
+  }
   <div class="page-header-items">
     {
       labels.length > 0 && (

@@ -28,7 +28,10 @@ const metaTags: MetaTagsProps = {
   <MetaTags slot="meta-tags" {...metaTags} />
   <Container size="xl" inlinePadding="sm">
     <div class="blog">
-      <PageHeader title="My Blog Posts" />
+      <PageHeader
+        title="My Blog Posts"
+        subtitle="All my knowledge, my experience and my rants are being written here. Feel free to read and share my thoughts to others. Thank you 😊"
+      />
       <div class="blog-posts">
         {
           sortedPosts.map(({ frontmatter }) => (
@@ -43,7 +46,7 @@ const metaTags: MetaTagsProps = {
                 subtitle={`Posted on ${formatDate(frontmatter.date)}`}
                 summary={`${frontmatter.excerpt.substring(0, 170)} ...`}
                 tags={frontmatter.label.sort()}
-              ></Card>
+              />
             </Text>
           ))
         }
