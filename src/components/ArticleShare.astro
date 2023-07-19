@@ -1,26 +1,14 @@
 ---
+import Text from "./Text.astro";
+import IconShare from "./icons/IconShare.astro";
+import IconComment from "./icons/IconComment.astro";
 ---
 
-<div>
-  <input name="article-share" type="submit" value="Share This Article" />
+<div class="article-share">
+  <button>
+    <IconShare />
+  </button>
+  <button>
+    <IconComment />
+  </button>
 </div>
-
-<script type="text/partytown">
-const shareEl = document.querySelector('input[name="article-share"]');
-if (navigator.share) {
-  shareEl.addEventListener("click", async () => {
-    await navigator.share({
-      title: document.title,
-      url: window.location.href,
-    });
-  });
-} else {
-  shareEl.addEventListener("click", () => {
-    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-      window.location.href
-    )}`;
-
-    window.open(shareUrl, "_blank");
-  });
-}
-</script>
