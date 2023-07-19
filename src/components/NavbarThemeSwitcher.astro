@@ -6,13 +6,12 @@ import IconDark from "./icons/IconDark.astro";
 
 <theme-switcher>
   <Text
-    id="light"
     tag="span"
-    class="navbar-theme-switcher navbar-theme-switcher-hidden"
+    class="navbar-theme-switcher navbar-theme-switcher-hidden navbar-theme-light"
   >
     <IconLight />
   </Text>
-  <Text id="dark" tag="span" class="navbar-theme-switcher">
+  <Text tag="span" class="navbar-theme-switcher navbar-theme-dark">
     <IconDark />
   </Text>
 </theme-switcher>
@@ -23,8 +22,8 @@ import IconDark from "./icons/IconDark.astro";
       super();
 
       const bodyEl = document.body;
-      const iconLightEl = this.querySelector("#light");
-      const iconDarkEl = this.querySelector("#dark");
+      const iconLightEl = this.querySelector(".navbar-theme-light");
+      const iconDarkEl = this.querySelector(".navbar-theme-dark");
 
       const bodyDarkClass = "dark";
       const iconHiddenClass = "navbar-theme-switcher-hidden";

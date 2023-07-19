@@ -1,5 +1,7 @@
 ---
+import NavbarThemeSwitcher from "./NavbarThemeSwitcher.astro";
 import Text from "./Text.astro";
+import IconMenu from "./icons/IconMenu.astro";
 ---
 
 <nav class="navbar-mobile">
@@ -7,17 +9,10 @@ import Text from "./Text.astro";
     <Text tag="a" href="/" size="lg" class="navbar-mobile-brand">AA.DEV</Text>
 
     <div class="navbar-mobile-hamburger">
-      <Text tag="span" size="md">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="1em"
-          viewBox="0 0 448 512"
-        >
-          <path
-            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-          ></path></svg
-        >
+      <Text tag="span" size="md" class="navbar-mobile-menu">
+        <IconMenu />
       </Text>
+      <NavbarThemeSwitcher />
     </div>
   </div>
 </nav>
@@ -36,7 +31,7 @@ import Text from "./Text.astro";
 
 <script>
   const menulistEl = document.querySelector(".navbar-m-list");
-  const openMenuEl = document.querySelector(".navbar-mobile-hamburger");
+  const openMenuEl = document.querySelector(".navbar-mobile-menu");
   const menuCloseEl = document.querySelector(".navbar-m-list-close");
   const slideInClass = "navbar-m-list-slide-in";
   const slideOutClass = "navbar-m-list-slide-out";
