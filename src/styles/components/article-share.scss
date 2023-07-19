@@ -1,16 +1,16 @@
 .article-share {
-  @include border;
-  @include padding-md;
-  background-color: $color-light;
   display: flex;
-  gap: $spacing-lg;
+  gap: $spacing-md;
   align-items: center;
   justify-content: center;
 
   button {
     outline: none;
-    background-color: transparent;
+    background-color: $color-light;
     border: none;
     font-size: 0;
+    @include border;
+    @include padding-sm;
+    width: 100%;
   }
 }
