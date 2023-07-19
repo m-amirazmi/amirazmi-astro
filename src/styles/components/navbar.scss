@@ -44,4 +44,8 @@
   &-hidden {
     display: none;
   }
+
+  &-animate {
+    @include animate-to-bottom;
+  }
 }

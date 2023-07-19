@@ -1,0 +1,11 @@
+.page {
+  position: relative;
+  transform: translateY(14.4rem);
+  opacity: 0;
+  @include transition(0.2);
+
+  &-loaded {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

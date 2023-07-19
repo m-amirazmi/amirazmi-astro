@@ -1,5 +1,4 @@
 .navbar-main {
-  @include padding-2xl-inline;
   @include padding-lg-vertical;
   position: sticky;
   top: 0;
@@ -13,7 +12,6 @@
     @include padding-lg-inline;
     @include padding-md-vertical;
     @include border;
-    @include animate-to-bottom;
     background-color: $color-light;
     display: flex;
     align-items: center;

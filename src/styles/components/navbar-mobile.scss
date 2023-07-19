@@ -14,7 +14,6 @@
     position: sticky;
     top: 0;
     left: 0;
-    @include animate-to-bottom;
 
     .navbar-mobile-brand {
       @include padding-xs-vertical;

@@ -48,6 +48,6 @@ import IconMenu from "./icons/IconMenu.astro";
     }
   }
 
-  openMenuEl.addEventListener("click", toggleMenu);
+  openMenuEl && openMenuEl.addEventListener("click", toggleMenu);
   menuCloseEl.addEventListener("click", toggleMenu);
 </script>

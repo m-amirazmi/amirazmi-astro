@@ -7,37 +7,103 @@ import MetaTags from "../components/MetaTags.astro";
 import { MetaTagsProps } from "../utils/types";
 
 const metaTags: MetaTagsProps = {
-	title: "Welcome To My Digital Self",
+  title: "Welcome To My Digital Self",
 };
 ---
 
 <Layout>
-	<MetaTags slot="meta-tags" {...metaTags} />
-	<Hero />
-	<div id="main">
-		<Container size="xl" inlinePadding="sm" />
-	</div>
+  <MetaTags slot="meta-tags" {...metaTags} />
+  <Hero />
+  <div id="main">
+    <Container size="xl" inlinePadding="sm">
+      <Text size="4xl">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
+        laudantium esse deleniti laborum, atque at ratione numquam distinctio
+        culpa voluptate voluptatem sed? Dolorum quasi facere suscipit ex
+        doloribus. Veritatis culpa quae placeat aut eum quaerat laboriosam
+        expedita consequatur aperiam qui aliquid, odio nam iste eius tenetur
+        voluptates quisquam! Accusantium perferendis magnam sit iusto ipsa ad
+        doloribus, facilis provident nihil dolore assumenda! Dicta accusantium
+        architecto distinctio ex consequuntur velit eos exercitationem
+        voluptates quae similique corrupti amet neque accusamus cupiditate
+        itaque ipsum reprehenderit debitis, vero inventore quia voluptatibus
+        eum, atque autem suscipit? Ea voluptatibus labore ab doloribus, dolore
+        totam. Dolores fuga, soluta porro, facilis vel cumque error nihil
+        eveniet eligendi aliquam doloribus assumenda consectetur dicta libero
+        beatae doloremque magnam reprehenderit maiores? Repudiandae aut
+        laudantium necessitatibus facere ipsum blanditiis sequi nihil ab
+        asperiores totam, ipsa animi quos cupiditate neque debitis quasi aliquid
+        eaque obcaecati, laboriosam temporibus, nulla harum? Natus, odit. Maxime
+        vel ipsam voluptatibus velit accusantium vero ratione sunt, perspiciatis
+        nulla sit consequuntur ad culpa alias nobis tempore hic quidem ipsa
+        impedit laborum qui nihil sint nisi tempora fugiat. Aut itaque iure,
+        aperiam iste, accusantium, culpa quam voluptatibus modi molestias
+        deserunt distinctio eius. Aliquid voluptatem, labore voluptatum pariatur
+        iure mollitia optio incidunt corporis obcaecati esse debitis vel placeat
+        culpa inventore sed et ipsum. Veritatis sapiente, expedita et aspernatur
+        culpa voluptatibus, praesentium temporibus, id vitae quam explicabo
+        ipsam eos provident quae? Deleniti nihil aliquid nisi ullam inventore
+        repellendus, vitae debitis voluptas vero eveniet reiciendis aperiam odit
+        aliquam accusantium. Officiis, qui non? Itaque tempora iste facilis ut
+        assumenda ipsa nesciunt sapiente laboriosam quae doloremque amet id
+        necessitatibus maiores, quas qui provident voluptatem deleniti. Velit,
+        inventore exercitationem consequuntur hic architecto, maxime veniam
+        magnam illo alias quam amet ab adipisci officiis quo in explicabo dolor
+        ex, placeat porro? Aperiam nostrum consequuntur iusto deleniti,
+        reprehenderit ea ex. Voluptatibus saepe fugit, doloribus ut illo
+        consequatur, dignissimos velit vero voluptas nesciunt, repellat tempore
+        delectus maiores voluptatum. Repudiandae asperiores dolor eius, modi
+        voluptate nulla fugiat distinctio exercitationem, reiciendis unde itaque
+        error minima quia illum quos corrupti in. Cum reprehenderit dicta neque
+        fugit autem! Odit repudiandae voluptate, minima blanditiis nemo suscipit
+        delectus, illum odio soluta molestiae porro vitae doloremque aliquam
+        consequatur fugit sed error quis rerum ducimus numquam. Facilis neque
+        quidem dolorem recusandae dicta nam animi sequi! Quas ex optio adipisci
+        temporibus minus, mollitia iusto, sapiente facilis neque exercitationem
+        delectus, vel et repudiandae cumque recusandae porro soluta
+        necessitatibus hic eveniet laudantium fugit rerum asperiores nobis
+        nesciunt! Dolores labore similique, quam voluptate vel laborum
+        repudiandae nihil dolore fuga magnam deleniti autem aliquid voluptates
+        accusamus odio illum cum alias assumenda aut deserunt. Possimus
+        architecto hic blanditiis ullam culpa fugiat dignissimos enim, iste modi
+        beatae quos eaque dolorum quis, omnis placeat! Consequuntur veritatis
+        voluptatum similique id autem atque quae magnam obcaecati delectus
+        quidem incidunt, ipsam, officiis molestias quod nisi totam, omnis odio
+        esse et cupiditate sunt. Distinctio, quasi alias. Ea recusandae a dolor
+        officia, temporibus illum quam ad deleniti obcaecati officiis quod
+        maxime! Vel quis amet molestiae optio rem! Aliquam tenetur ratione
+        soluta illo dignissimos.
+      </Text>
+    </Container>
+  </div>
 </Layout>
 
-<script>
-	function checkSectionsInView() {
-		const mainContent = document.querySelector("#main");
-		const rect = mainContent.getBoundingClientRect();
-		const navbarMainEl = document.querySelector(".navbar-main");
-		const navbarEl = document.querySelector(".navbar");
-		const navbarMobile = document.querySelector(".navbar-mobile");
+<script type="text/partytown">
+function checkSectionsInView() {
+	const mainContent = document.querySelector("#main");
+	const rect = mainContent.getBoundingClientRect();
+	const navbarMainEl = document.querySelector(".navbar-main");
+	const navbarEl = document.querySelector(".navbar");
+	const navbarMobile = document.querySelector(".navbar-mobile");
+	const navbarMainContainer = navbarMainEl.querySelector(
+		".navbar-main-container"
+	);
 
-		if (rect.top < 0) {
-			navbarMainEl.classList.remove("navbar-hidden");
-			navbarEl.classList.add("navbar-hidden");
-			navbarMobile.classList.add("navbar-mobile-sticky");
-		} else {
-			navbarMainEl.classList.add("navbar-hidden");
-			navbarEl.classList.remove("navbar-hidden");
-			navbarMobile.classList.remove("navbar-mobile-sticky");
-		}
+	if (rect.top < 0) {
+		navbarMainEl.classList.remove("navbar-hidden");
+		navbarEl.classList.add("navbar-hidden");
+		navbarMobile.classList.add("navbar-mobile-sticky");
+		navbarMainContainer.classList.add("navbar-animate");
+		navbarMobile.classList.add("navbar-animate");
+	} else {
+		navbarMainEl.classList.add("navbar-hidden");
+		navbarEl.classList.remove("navbar-hidden");
+		navbarMobile.classList.remove("navbar-mobile-sticky");
+		navbarMainContainer.classList.remove("navbar-animate");
+		navbarMobile.classList.remove("navbar-animate");
 	}
+}
 
-	window.addEventListener("scroll", checkSectionsInView);
-	checkSectionsInView();
+window.addEventListener("scroll", checkSectionsInView);
+checkSectionsInView();
 </script>

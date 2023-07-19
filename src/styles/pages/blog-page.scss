@@ -3,6 +3,7 @@
 
 .blog {
   width: 100%;
+  position: relative;
   h1 {
     margin-bottom: $spacing-md;
     @include screen-sm {
