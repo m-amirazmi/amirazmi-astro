@@ -3,7 +3,7 @@ class ThemeSwitcher extends HTMLElement {
   iconLightEl = this.querySelector(".navbar-theme-light");
   iconDarkEl = this.querySelector(".navbar-theme-dark");
   bodyDarkClass = "dark";
-  iconHiddenClass = "navbar-theme-switcher-hidden";
+  iconHiddenClass = "hidden";
   themeLocal = localStorage.getItem("theme");
 
   constructor() {
@@ -34,4 +34,6 @@ class ThemeSwitcher extends HTMLElement {
   }
 }
 
-customElements.define("theme-switcher", ThemeSwitcher);
+if (!customElements.get("theme-switcher")) {
+  customElements.define("theme-switcher", ThemeSwitcher);
+}
