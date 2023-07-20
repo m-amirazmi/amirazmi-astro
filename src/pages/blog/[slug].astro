@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { Content, frontmatter } = Astro.props.post;
-const { title, excerpt, author, label, related } =
+const { title, excerpt, author, label, related, image } =
   frontmatter as PostFrontMatter;
 const labels = frontmatter.label;
 
@@ -32,6 +32,7 @@ const metaTags: MetaTagsProps = {
   keywords: label,
   author,
   description: excerpt,
+  imageUrl: image ? image.src : "",
 };
 ---
 

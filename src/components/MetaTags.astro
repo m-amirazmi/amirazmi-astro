@@ -8,6 +8,8 @@ export interface Props {
 }
 
 const url = Astro.url;
+const host = url.host;
+const protocol = url.protocol;
 
 const {
   title = "AA.DEV | Welcome To My Digital Self",
@@ -16,6 +18,8 @@ const {
   author,
   imageUrl,
 } = Astro.props as Props;
+
+const imageFullUrl = protocol + "//" + host + imageUrl;
 ---
 
 <meta charset="UTF-8" />
@@ -31,10 +35,10 @@ const {
 {url && <link rel="canonical" href={url} />}
 {title && <meta property="og:title" content={title} />}
 {description && <meta property="og:description" content={description} />}
-{imageUrl && <meta property="og:image" content={imageUrl} />}
+{imageUrl && <meta property="og:image" content={imageFullUrl} />}
 {url && <meta property="og:url" content={url} />}
 <meta name="twitter:card" content="summary" />
 {title && <meta name="twitter:title" content={title} />}
 {description && <meta name="twitter:description" content={description} />}
-{imageUrl && <meta name="twitter:image" content={imageUrl} />}
+{imageUrl && <meta name="twitter:image" content={imageFullUrl} />}
 <title>AA.DEV | {title}</title>
