@@ -14,7 +14,7 @@
       line-height: 150%;
       margin-bottom: 0.8rem;
 
-      @if $key == "p" or $key == "span" {
+      @if $key == "p" or $key == "span" or $key == "ul" or $key == "li" {
         @extend .font-regular;
       } @else {
         @extend .font-semibold;
@@ -37,6 +37,19 @@
 
     @include screen-sm {
       line-height: 150%;
+    }
+  }
+
+  ul {
+    margin-left: $spacing-md;
+    margin-bottom: $spacing-sm;
+    a {
+      text-decoration: underline;
+      color: $color-primary;
+
+      & > span {
+        font-weight: map-get($map: $font-weights, $key: "regular");
+      }
     }
   }
 }

@@ -2,10 +2,15 @@
 title: Infinite Nested Navigation Menu With React
 slug: infinite-nested-navigation-menu-with-react
 excerpt: Nested navigation menus are essential for websites and apps. They simplify navigation, enable mega menus, and support complex page structures with infinite levels of submenus.
-date: 1689776500000
+date: 1690042870000
 author: Amir Azmi
 label: [tutorial, react, component, interactive]
 status: published
+image:
+  alt: "infinite-nested-navigation-menu-with-react"
+  src: "/infinite-nested-navigation-menu-with-react.webp"
+  width: "824"
+  height: "474"
 related:
   [
     my-life-before-web-coding,
@@ -18,4 +23,103 @@ Nested navigation menus are important components or elements for any websites an
 
 Most applications today typically have 1 to 3 levels of menu listings. However, some applications require more than 3 levels of menus. This is where the concept of infinite nested navigation menus comes into play. Infinite nested navigation menus allow developers to add as many submenus as needed, especially when dealing with complex page structures and deeply nested URLs. They are particularly suitable for dashboard applications or file-based applications.
 
-## How Infinite Nested Navigation Menu Looks Like
+## Getting Started
+
+Before we start coding, we need to do some preparation and understand the high-level overview of this component first. With a better understanding, we can build a component with a high level of accuracy and easily achieve our target.
+
+### Prerequisite
+
+Make sure you have a basic understand of HTML, CSS and Javascript, as well as an understanding of how React works. Here are the tools we need to create this component from the ground up:
+
+- <a href="https://vitejs.dev/guide/" target="_blank">
+    <span>React Typescript with Vite</span>
+  </a>
+
+- <a
+    href="https://storybook.js.org/docs/react/get-started/install/"
+    target="_blank"
+  >
+    <span>Storybook Version 7</span>
+  </a>
+
+These two library will be enough to build this component. We will use Storybook because we want to test and make sure our component behaves as aspected. Storybook also allows us to easily document our component.
+
+### Programming concept
+
+To make the nested menu become infinite, we need to embrace the recursion programming concept. We create a function that go through the array of objects which contains bunch of menu items. Below is the example of menu we will be using.
+
+```json
+// Menu List JSON
+[
+  {
+    id: "1",
+    name: "Dashboard",
+    subpages: [
+      {
+        id: "dashboard",
+        name: "Dashboard",
+        path: "/",
+      },
+      {
+        id: "multilevel-0",
+        name: "MultiLevel 0",
+        subpages: [
+          {
+            id: "multilevel-1",
+            name: "MultiLevel 1",
+            subpages: [
+              {
+                id: "multilevel-2",
+                name: "MultiLevel 2"
+                subpages: [...]
+              },
+            ]
+          },
+        ]
+      },
+    ],
+  },
+  {
+    id: "2",
+    name: "Settings",
+    subpages: [
+      {
+        id: "user-setting",
+        name: "User Setting",
+        path: "/user-setting",
+      },
+    ],
+  }
+],
+```
+
+If the function does not find a submenu item, the function stops and renders the menu item, then continues to the next menu item. If the function finds a submenu item, the function will call itself and create a new branch of calling the same function.
+
+It is hard to explain recursion. Maybe someday I will create an article or a tutorial in detail how recursion works.
+
+### Component Driven Development
+
+As we will use Storybook for this project, we will build the component through Component Driven Development approach, where we will start from small component up to a single component that we want to build.
+
+For our infinite nested menu component, we will need:
+
+- Menu Item Component
+- Nested Menu Component
+
+Each component will be placed in their own folder together with 2 more files: `<component>.module.css` and `<component>.stories.ts`. Make sure in our React project, under the `src` folder, we have the following folder structure:
+
+```
+├── components/
+  ├── menu-item/
+  │ ├── menu-item.tsx
+  │ ├── menu-item.module.css
+  │ └── menu-item.stories.ts
+  └── menu-nested/
+    ├── menu-nested.tsx
+    ├── menu-nested.module.css
+    └── menu-nested.stories.ts
+```
+
+## Start Crafting
+
+All the prequisite has been prepared. We also understand what we should expect at the end of the development of infinite nested component. Now we can start coding.

@@ -38,7 +38,12 @@ $text-transforms: (
 );
 
 $font-tags: (
-  "span":
+  "ul":
+    map-get(
+      $map: $font-sizes,
+      $key: "sm",
+    ),
+  "li":
     map-get(
       $map: $font-sizes,
       $key: "sm",
@@ -81,6 +86,16 @@ $font-tags: (
 );
 
 $font-tags-mobile: (
+  "ul":
+    map-get(
+      $map: $font-sizes-mobile,
+      $key: "sm",
+    ),
+  "li":
+    map-get(
+      $map: $font-sizes-mobile,
+      $key: "sm",
+    ),
   "span":
     map-get(
       $map: $font-sizes-mobile,
