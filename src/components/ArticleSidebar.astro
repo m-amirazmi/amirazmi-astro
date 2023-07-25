@@ -2,6 +2,7 @@
 import { formatDate } from "../utils/helpers";
 import { PostFrontMatter } from "../utils/types";
 import Card from "./Card.astro";
+import NewsletterForm from "./NewsletterForm.astro";
 import Text from "./Text.astro";
 
 export interface Props {
@@ -37,5 +38,6 @@ const classes = `article-sidebar ${c}`;
           ))
       }
     </div>
+    <NewsletterForm />
   </div>
 </aside>
