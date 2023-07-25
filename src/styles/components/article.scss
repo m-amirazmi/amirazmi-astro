@@ -43,12 +43,32 @@
   ul {
     margin-left: $spacing-md;
     margin-bottom: $spacing-sm;
-    a {
-      text-decoration: underline;
-      color: $color-primary;
+  }
 
-      & > span {
-        font-weight: map-get($map: $font-weights, $key: "regular");
+  a {
+    text-decoration: underline;
+    color: $color-primary;
+
+    & > span {
+      font-weight: map-get($map: $font-weights, $key: "regular");
+    }
+  }
+
+  blockquote {
+    @include border;
+    @include padding-sm-inline;
+    @include padding-xs-vertical;
+    @include margin-md-vertical;
+
+    font-size: map-get($map: $font-sizes, $key: "xs");
+    p {
+      margin-bottom: 0;
+      font-size: inherit;
+    }
+
+    br.hidden {
+      @include screen-sm {
+        display: block;
       }
     }
   }
