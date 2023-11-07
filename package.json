@@ -1,27 +1,17 @@
 {
-  "name": "amirazmi",
+  "name": "amirazmi-astro",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.7",
-    "@astrojs/partytown": "^1.2.3",
-    "@astrojs/react": "^2.2.1",
-    "@astrojs/sitemap": "^1.4.0",
-    "@fontsource-variable/fira-code": "^5.0.5",
-    "@fontsource-variable/quicksand": "^5.0.5",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "astro": "^2.8.1",
-    "astro-robots-txt": "^0.5.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "sass": "^1.63.6"
+    "@astrojs/check": "^0.3.1",
+    "astro": "^3.4.3",
+    "typescript": "^5.2.2"
   }
 }
