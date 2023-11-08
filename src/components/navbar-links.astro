@@ -3,6 +3,6 @@ import NavbarLinkitem from "./navbar-linkitem.astro";
 import { navbar as data } from "../data/links.json";
 ---
 
-<div class="flex items-center gap-8 text-gray-800/50">
+<div class="flex items-center gap-6 md:gap-8 text-gray-800/50">
   {data.map((i) => i.show && <NavbarLinkitem {...i} />)}
 </div>
