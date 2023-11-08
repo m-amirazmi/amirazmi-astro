@@ -1,14 +1,18 @@
 ---
 import Container from "./container.astro";
 import Spacer from "./spacer.astro";
-import { intro } from "../data/global.json";
+import { intro } from "../data/layout.json";
+import IntroSocial from "./intro-social.astro";
 ---
 
 <Container>
-  <div class="max-w-lg">
-    {intro.title && <h1 class="text-3xl font-semibold">{intro.title}</h1>}
-    {intro.subtitle && <p class="text-xl text-gray-800">{intro.subtitle}</p>}
-    {intro.subtitle && <Spacer size="xs" />}
-    {intro.description && <p class="text-gray-500">{intro.description}</p>}
+  <div class="flex gap-8 flex-col">
+    <div class="max-w-lg">
+      {intro.title && <h1 class="text-3xl font-semibold">{intro.title}</h1>}
+      {intro.subtitle && <p class="text-xl text-gray-800">{intro.subtitle}</p>}
+      {intro.subtitle && <Spacer size="xs" />}
+      {intro.description && <p class="text-gray-500">{intro.description}</p>}
+    </div>
+    <IntroSocial />
   </div>
 </Container>
