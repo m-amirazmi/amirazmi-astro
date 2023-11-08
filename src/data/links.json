@@ -1,0 +1,20 @@
+{
+  "navbar":[
+    {
+      "path": "/",
+      "name": "Home"
+    },
+    {
+      "path": "/blogs",
+      "name": "Blogs"
+    },
+    {
+      "path": "/about",
+      "name": "About"
+    },
+    {
+      "path": "/playground",
+      "name": "Playground"
+    }
+  ]
+}

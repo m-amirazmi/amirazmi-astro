@@ -1,0 +1,20 @@
+---
+import Container from "../components/container.astro";
+import Header from "../components/header.astro";
+import Spacer from "../components/spacer.astro";
+import "@fontsource-variable/inter";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <slot name="meta" />
+  </head>
+  <body>
+    <Header />
+    <Spacer size="lg" />
+    <Container>
+      <slot />
+    </Container>
+  </body>
+</html>

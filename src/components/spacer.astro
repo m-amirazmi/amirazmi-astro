@@ -1,0 +1,16 @@
+---
+interface Props {
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+}
+const { size = "xs" } = Astro.props;
+
+const height = {
+  xs: "8px",
+  sm: "16px",
+  md: "24px",
+  lg: "32px",
+  xl: "48px",
+};
+---
+
+<div style={{ height: height[size] }}></div>

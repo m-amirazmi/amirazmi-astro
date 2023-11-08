@@ -1,0 +1,9 @@
+---
+interface Props {
+  path: string;
+  name: string;
+}
+const { name, path } = Astro.props;
+---
+
+<a href={path}>{name}</a>
