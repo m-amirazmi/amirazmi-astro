@@ -1,21 +1,13 @@
 ---
-import { navbar as data } from "../data/links.json";
 import NavbarLinkitem from "./navbar-linkitem.astro";
+import NavbarLogo from "./navbar-logo.astro";
 import Container from "./container.astro";
+import NavbarLinks from "./navbar-links.astro";
 ---
 
 <Container>
   <nav class="flex items-center justify-between">
-    <div class="w-12 h-12">
-      <img
-        src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/google-icon.png"
-        width="48px"
-        height="48px"
-        class="object-cover object-center"
-      />
-    </div>
-    <div class="flex items-center gap-8">
-      {data.map((i) => <NavbarLinkitem {...i} />)}
-    </div>
+    <NavbarLogo />
+    <NavbarLinks />
   </nav>
 </Container>

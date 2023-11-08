@@ -2,19 +2,23 @@
   "navbar":[
     {
       "path": "/",
-      "name": "Home"
+      "name": "Home",
+      "show": false
     },
     {
       "path": "/blogs",
-      "name": "Blogs"
+      "name": "Blogs",
+      "show": true
     },
     {
       "path": "/about",
-      "name": "About"
+      "name": "About",
+      "show": true
     },
     {
       "path": "/playground",
-      "name": "Playground"
+      "name": "Playground",
+      "show": true
     }
   ]
 }
