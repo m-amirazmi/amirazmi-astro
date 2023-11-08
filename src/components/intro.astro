@@ -9,8 +9,11 @@ import IntroSocial from "./intro-social.astro";
   <div class="flex gap-8 flex-col">
     <div class="max-w-lg">
       {intro.title && <h1 class="text-3xl font-semibold">{intro.title}</h1>}
-      {intro.subtitle && <p class="text-xl text-gray-800">{intro.subtitle}</p>}
-      {intro.subtitle && <Spacer size="xs" />}
+      {
+        intro.subtitle && (
+          <p class="text-xl text-gray-800 mb-2">{intro.subtitle}</p>
+        )
+      }
       {intro.description && <p class="text-gray-500">{intro.description}</p>}
     </div>
     <IntroSocial />
