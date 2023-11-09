@@ -1,0 +1,17 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Playground",
+      "url": "https://libraries.amirazmi.dev",
+      "target":"_blank"
+    }
+  ]
+}

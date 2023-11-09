@@ -1,50 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Text from "../components/Text.astro";
-import Container from "../components/Container.astro";
-import MetaTags from "../components/MetaTags.astro";
-import { MetaTagsProps } from "../utils/types";
+import { getCollection } from "astro:content";
+import HomePagination from "@components/HomePagination.astro";
+import Base from "@layouts/Base.astro";
+import Posts from "@layouts/Posts.astro";
 
-const metaTags: MetaTagsProps = {
-  title: "Welcome To My Digital Self",
-};
+const getAllPosts = await getCollection("blog") || []
+
+const posts = getAllPosts.sort((a, b) => {
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+});
 ---
 
-<Layout>
-  <MetaTags slot="meta-tags" {...metaTags} />
-  <Hero />
-  <div id="main">
-    <Container size="xl" inlinePadding="sm" />
-  </div>
-</Layout>
-
-<script type="text/partytown">
-function checkSectionsInView() {
-  const mainContent = document.querySelector("#main");
-  const rect = mainContent.getBoundingClientRect();
-  const navbarMainEl = document.querySelector(".navbar-main");
-  const navbarEl = document.querySelector(".navbar");
-  const navbarMobile = document.querySelector(".navbar-mobile");
-  const navbarMainContainer = navbarMainEl.querySelector(
-    ".navbar-main-container"
-  );
-
-  if (rect.top < 0) {
-    navbarMainEl.classList.remove("navbar-hidden");
-    navbarEl.classList.add("navbar-hidden");
-    navbarMobile.classList.add("navbar-mobile-sticky");
-    navbarMainContainer.classList.add("navbar-animate");
-    navbarMobile.classList.add("navbar-animate");
-  } else {
-    navbarMainEl.classList.add("navbar-hidden");
-    navbarEl.classList.remove("navbar-hidden");
-    navbarMobile.classList.remove("navbar-mobile-sticky");
-    navbarMainContainer.classList.remove("navbar-animate");
-    navbarMobile.classList.remove("navbar-animate");
-  }
-}
-
-window.addEventListener("scroll", checkSectionsInView);
-checkSectionsInView();
-</script>
+<Base>
+  <Posts posts={posts} />
+  {posts.length > 0 && <HomePagination />}
+</Base>

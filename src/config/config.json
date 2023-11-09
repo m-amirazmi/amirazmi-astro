@@ -1,0 +1,25 @@
+{
+  "site": {
+    "title": "AAD",
+    "base_url": "https://amirazmi.dev",
+    "base_path": "/",
+    "favicon": "/favicon.png",
+    "logo": "https://s3.amazonaws.com/gndx.dev/ev0-astro-logo.png",
+    "lang": "en",
+    "description": "A Frontend Developer with 4 years of professional experiences in various industries using ReactJS and NextJS.",
+    "pageSize": 6
+  },
+  "features": {
+    "youtube": false,
+    "dark_mode": true
+  },
+  "metadata": {
+    "meta_author": "Muhamad Amir Azmi | Frontend Developer",
+    "meta_description": "A Frontend Developer with 4 years of professional experiences in various industries using ReactJS and NextJS."
+  },
+  "author": {
+    "name": "Muhamad Amir Azmi",
+    "avatar": "https://s3.amazonaws.com/gndx.dev/gndx-astro-avatar.png",
+    "bio": "A Frontend Developer with 4 years of professional experiences in various industries using ReactJS and NextJS."
+  }
+}
