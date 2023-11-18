@@ -6,7 +6,7 @@
     "favicon": "/favicon.png",
     "logo": "https://s3.amazonaws.com/gndx.dev/ev0-astro-logo.png",
     "lang": "en",
-    "description": "A Frontend Developer with 4 years of professional experiences in various industries using ReactJS and NextJS.",
+    "description": "A <span class=\"underline font-semibold text-teal-700\">Frontend Developer</span> with 4 years of professional experiences in various industries using ReactJS and NextJS.",
     "pageSize": 6
   },
   "features": {
@@ -19,7 +19,7 @@
   },
   "author": {
     "name": "Muhamad Amir Azmi",
-    "avatar": "https://s3.amazonaws.com/gndx.dev/gndx-astro-avatar.png",
-    "bio": "A Frontend Developer with 4 years of professional experiences in various industries using ReactJS and NextJS."
+    "avatar": "/images/hero.svg",
+    "bio": "A <span class=\"underline font-semibold text-teal-700\">Frontend Developer</span> with 4 years of professional experiences in various industries using ReactJS and NextJS."
   }
 }
