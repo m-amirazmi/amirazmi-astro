@@ -4,15 +4,15 @@ import config from "@config/config.json";
 ---
 
 <section class="bg-teal-50/50 dark:bg-zinc-900">
-  <div class="mx-auto max-w-screen-lg px-4 sm:px-6 py-8 pb-10 md:pb-14 sm:py-14 lg:px-8">
+  <div class="mx-auto max-w-screen-lg px-4 sm:px-6 py-10 pb-10 md:pb-14 sm:py-14 lg:px-8">
     <div class="flex flex-col gap-6 md:gap-4 md:flex-row items-center justify-between">
       <div class="rounded-lg md:w-7/12">
         <h1
-          class="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-0"
+          class="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-0"
         >
           {config.author.name}
         </h1>
-        <p class="mt-1.5 text-base md:text-lg text-zinc-700 dark:text-zinc-400" set:html={config.author.bio}></p>
+        <p class="mt-1.5 text-lg md:text-xl text-zinc-700 dark:text-zinc-400" set:html={config.author.bio}></p>
       </div>
       {config.author.avatar && 
       <div class="rounded-lg">
