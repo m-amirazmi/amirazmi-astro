@@ -3,10 +3,10 @@ import { Image } from "astro:assets";
 import config from "@config/config.json";
 ---
 
-<section class="bg-teal-50/50 dark:bg-zinc-900">
-  <div class="mx-auto max-w-screen-lg px-4 sm:px-6 py-10 pb-10 md:pb-14 sm:py-14 lg:px-8">
-    <div class="flex flex-col gap-6 md:gap-4 md:flex-row items-center justify-between">
-      <div class="rounded-lg md:w-7/12">
+<section class="md:max-w-screen-xl mx-auto md:px-8">
+  <div class="rounded-2xl bg-teal-50 dark:bg-zinc-900 p-8 md:p-12">
+    <div class="flex flex-col gap-8 md:flex-row items-center justify-between">
+      <div class="md:w-7/12">
         <h1
           class="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-0"
         >
@@ -16,9 +16,9 @@ import config from "@config/config.json";
       </div>
       {config.author.avatar && 
       <div class="rounded-lg">
-        <figure class="right-0">
+        <figure class="flex justify-center md:right-0">
           <Image
-            class="rounded-lg w-full md:w-96"
+            class="w-10/12 md:w-96"
             width={512}
             height={512}
             src={config.author.avatar}
