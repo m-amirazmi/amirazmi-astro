@@ -9,7 +9,7 @@ interface Post {
   pubDate: Date;
   updatedDate: Date | null;
   heroImage: string | null;
-  category: string[];
+  categories: string[];
   tags: string[];
   authors: string[];
 }
@@ -46,5 +46,5 @@ export const getSinglePage = async (collection: any) => {
   return removeDrafts;
 };
 
-export const taxonomyFilter = (posts: any[], name: string, key: any) =>
-  posts.filter((post) => post.data[name].map((name: string) => deslugify(name)).includes(deslugify(key)));
+// export const taxonomyFilter = (posts: any[], name: string, key: any) =>
+//   posts.filter((post) => post.data[name].map((name: string) => deslugify(name)).includes(deslugify(key)));
