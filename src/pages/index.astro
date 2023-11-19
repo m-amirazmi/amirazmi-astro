@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import HomePagination from "@components/HomePagination.astro";
 import Base from "@layouts/Base.astro";
 import Posts from "@layouts/Posts.astro";
+import Hero from "@components/Hero.astro";
 
 const getAllPosts = await getCollection("blog") || []
 
@@ -12,6 +13,7 @@ const posts = getAllPosts.sort((a, b) => {
 ---
 
 <Base>
-  <Posts posts={posts} />
-  {posts.length > 0 && <HomePagination />}
+  <Hero />
+  <!-- <Posts posts={posts} /> -->
+  <!-- {posts.length > 0 && <HomePagination />} -->
 </Base>

@@ -1,7 +1,6 @@
 ---
+import '@fontsource-variable/nunito';
 import Header from "@components/Header.astro";
-import Hero from "@components/Hero.astro";
-import FeaturedVideos from "@components/FeaturedVideos.astro";
 import Footer from "@components/Footer.astro";
 import config from "@config/config.json";
 import { createOgImage } from "@utils/createOgImage";
@@ -102,12 +101,9 @@ const ogImage = createOgImage({
     <link rel="manifest" href="/manifest.webmanifest" />
     <ViewTransitions />
   </head>
-  <body class="bg-white dark:bg-zinc-900/95">
+  <body class="flex flex-col min-h-screen bg-white dark:bg-zinc-900/95">
     <Header />
-    {!blogpost && <Hero />}
-    <main class="mx-auto max-w-screen-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <slot />
-    </main>
     <Footer />
   </body>
 </html>
