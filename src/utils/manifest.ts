@@ -29,5 +29,5 @@ export const manifest: Partial<ManifestOptions> = {
       purpose: 'any maskable',
     },
   ],
-  categories: ['blog'],
+  category: ['blog'],
 };

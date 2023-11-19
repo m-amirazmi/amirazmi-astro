@@ -16,9 +16,9 @@ type PostType = {
     description: string;
     heroImage: string;
     pubDate: Date;
-    categories: string[];
+    category: string;
     tags: string[];
-    autors: string[];
+    autors: string;
   };
 };
 ---
@@ -46,14 +46,12 @@ type PostType = {
         </div>
         <div class="flex items-center gap-x-4 text-xs text-zinc-900 dark:text-white">
           <FormattedDate date={post.data.pubDate} />
-          {post.data.categories.slice(0, 2).map((item) => (
             <a
-              href={`/categories/${slugify(item)}`}
+              href={`/category/${slugify(post.data.category)}`}
               class="capitalize text-md relative z-10 rounded-full bg-zinc-50 px-3 py-1.5 font-medium text-zinc-600 hover:bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-400"
             >
-              {item}
+              {post.data.category}
             </a>
-          ))}
         </div>
         <div class="relative">
           <h2 class="mt-3 text-xl font-semibold leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
