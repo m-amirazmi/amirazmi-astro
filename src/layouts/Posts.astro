@@ -28,27 +28,29 @@ type PostType = {
 >
   {
     posts?.slice(0, config.site.pageSize).map((post: PostType) => (
-      <article class="flex w-full flex-col items-start">
+      <article class="flex w-full flex-col items-start cursor-pointer">
         <div class="rounded-lg block overflow-hidden mb-4">
           {post.data.heroImage && (
-            <figure class="w-auto h-auto object-cover">
-              <Image
-                class="transition duration-300 ease-in-out hover:scale-110 cursor-progress"
-                src={post.data.heroImage}
-                alt={post.data.title}
-                width={960}
-                height={480}
-                decoding="async"
-                loading="lazy"
-              />
-            </figure>
+            <a href={`/blog/${post.slug}/`}>
+              <figure class="w-auto h-auto object-cover">
+                <Image
+                  class="transition duration-300 ease-in-out hover:scale-110"
+                  src={post.data.heroImage}
+                  alt={post.data.title}
+                  width={960}
+                  height={480}
+                  decoding="async"
+                  loading="lazy"
+                />
+              </figure>
+            </a>
           )}
         </div>
         <div class="flex items-center gap-x-4 text-xs text-zinc-900 dark:text-white">
           <FormattedDate date={post.data.pubDate} />
             <a
               href={`/category/${slugify(post.data.category)}`}
-              class="capitalize text-md relative z-10 rounded-full bg-zinc-50 px-3 py-1.5 font-medium text-zinc-600 hover:bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-400"
+              class="capitalize relative z-10 rounded-full bg-zinc-50 px-3 py-1.5 font-medium text-zinc-600 hover:bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-400"
             >
               {post.data.category}
             </a>
@@ -60,7 +62,7 @@ type PostType = {
               {post.data.title}
             </a>
           </h2>
-          <p class="mt-5 line-clamp-3 text-sm leading-6 text-zinc-600">
+          <p class="mt-5 line-clamp-3 leading-6 text-zinc-600">
             {post.data.description}
           </p>
         </div>

@@ -15,7 +15,7 @@ const { title, description, pubDate, heroImage, category, tags } =
 ---
 
 <Base meta_title={title} description={description} image={heroImage} blogpost>
-    <article class="max-w-6xl w-full mx-auto px-8">
+    <article class="max-w-6xl w-full mx-auto px-4">
       <div class="rounded-xl block overflow-hidden mb-8">
         {
           heroImage && (
@@ -65,7 +65,7 @@ const { title, description, pubDate, heroImage, category, tags } =
           </div>
         </div>
       </div>
-      <div class="prose prose-green prose-md md:prose-lg min-w-full">
+      <div class="prose prose-green prose-xl md:prose-2xl min-w-full">
         <slot />
       </div>
       <div class="mt-8">
