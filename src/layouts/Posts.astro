@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets";
-import FormattedDate from "@components/FormattedDate.astro";
-import config from "@config/config.json";
-import { slugify } from "@utils/slug";
+import { Image } from 'astro:assets';
+import FormattedDate from '@components/FormattedDate.astro';
+import config from '@config/config.json';
+import { slugify } from '@utils/slug';
 
 const { posts } = Astro.props;
 
@@ -23,20 +23,18 @@ type PostType = {
 };
 ---
 
-<div
-  class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
->
+<div class="mx-auto grid grid-cols-1 gap-x-4 gap-y-12 md:grid-cols-2 md:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
   {
-    posts?.slice(0, config.site.pageSize).map((post: PostType) => (
-      <article class="flex w-full flex-col items-start cursor-pointer">
-        <div class="rounded-lg block overflow-hidden mb-4">
-          {post.data.heroImage && (
-            <a href={`/blog/${post.slug}/`}>
-              <figure class="w-auto h-auto object-cover">
+    posts?.slice(0, config.site.pageSize).map(({ data, slug }: PostType) => (
+      <article class="flex w-full cursor-pointer flex-col items-start">
+        <div class="relative mb-4 block">
+          {data.heroImage && (
+            <a href={`/blog/${slug}/`}>
+              <figure class="h-auto w-auto overflow-hidden rounded-lg object-cover">
                 <Image
                   class="transition duration-300 ease-in-out hover:scale-110"
-                  src={post.data.heroImage}
-                  alt={post.data.title}
+                  src={data.heroImage}
+                  alt={data.title}
                   width={960}
                   height={480}
                   decoding="async"
@@ -45,27 +43,33 @@ type PostType = {
               </figure>
             </a>
           )}
+          {data.category && (
+            <a
+              href={`/blog?category=${slugify(data.category)}`}
+              class="absolute -bottom-4 right-4 z-10 rounded-lg bg-teal-100 px-3 py-1.5 font-medium capitalize text-zinc-800 hover:bg-teal-200 dark:bg-zinc-900 dark:text-zinc-400"
+            >
+              {data.category}
+            </a>
+          )}
         </div>
         <div class="flex items-center gap-x-4 text-xs text-zinc-900 dark:text-white">
-          <FormattedDate date={post.data.pubDate} />
-            <a
-              href={`/category/${slugify(post.data.category)}`}
-              class="capitalize relative z-10 rounded-full bg-zinc-50 px-3 py-1.5 font-medium text-zinc-600 hover:bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-400"
-            >
-              {post.data.category}
-            </a>
+          <FormattedDate date={data.pubDate} />
         </div>
         <div class="relative">
-          <h2 class="mt-3 text-xl font-semibold leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
-            <a href={`/blog/${post.slug}/`}>
-              <span class="absolute inset-0" />
-              {post.data.title}
-            </a>
+          <h2 class="mt-3 text-xl font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600 dark:text-white">
+            <a href={`/blog/${slug}/`}>{data.title}</a>
           </h2>
-          <p class="mt-5 line-clamp-3 leading-6 text-zinc-600">
-            {post.data.description}
-          </p>
+          <p class="mt-2 line-clamp-3 leading-6 text-zinc-600">{data.description}</p>
         </div>
+        {data.tags && data.tags.length > 0 && (
+          <div class="mt-3 flex gap-2 text-zinc-600">
+            {data.tags.map((tag) => (
+              <div class="rounded bg-teal-600 px-2 py-0.5 text-sm text-white">
+                <a href={`/blog?tag=${slugify(tag)}`}>{tag}</a>
+              </div>
+            ))}
+          </div>
+        )}
       </article>
     ))
   }
