@@ -1,10 +1,26 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import Container from '@/components/Container.astro'
+import { Image } from "astro:assets";
 ---
 
 <MainLayout>
-	<Container>
-		<div>This is the homepage</div>
-	</Container>
+  <div class="max-w-6xl mx-auto px-6 flex gap-6">
+    <div>
+      <h1 class="text-4xl font-semibold">Muhamad Amir Azmi</h1>
+      <p>Front End Web Developer</p>
+      <p>
+        A Frontend Developer with 4 years of professional experiences in various
+        industries using ReactJS and NextJS.
+      </p>
+    </div>
+    <div class="ml-auto">
+      <Image
+        class="rounded-xl"
+        src="/profile.png"
+        alt="profile-pic"
+        width="120"
+        height="120"
+      />
+    </div>
+  </div>
 </MainLayout>
