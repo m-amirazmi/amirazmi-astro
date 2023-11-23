@@ -7,7 +7,7 @@
     "logo": "https://s3.amazonaws.com/gndx.dev/ev0-astro-logo.png",
     "lang": "en",
     "description": "A <span class=\"underline font-semibold text-teal-700\">Frontend Developer</span> with 4 years of professional experiences in various industries using ReactJS and NextJS.",
-    "pageSize": 6
+    "pageSize": 3
   },
   "features": {
     "youtube": false,

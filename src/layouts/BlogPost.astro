@@ -15,11 +15,11 @@ const { title, description, pubDate, heroImage, category, tags } =
 ---
 
 <Base meta_title={title} description={description} image={heroImage} blogpost>
-    <article class="max-w-5xl w-full mx-auto px-8">
+    <article class="max-w-6xl w-full mx-auto px-8">
       <div class="rounded-xl block overflow-hidden mb-8">
         {
           heroImage && (
-            <figure class="w-auto h-auto md:h-[400px] object-cover bg-teal-50">
+            <figure class="w-auto h-auto object-cover bg-teal-50">
               <Image
                 class="transition duration-300 ease-in-out hover:scale-110 cursor-progress"
                 src={heroImage}

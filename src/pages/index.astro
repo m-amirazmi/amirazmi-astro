@@ -14,6 +14,9 @@ const posts = getAllPosts.sort((a, b) => {
 
 <Base>
   <Hero />
-  <!-- <Posts posts={posts} /> -->
+  <div class="md:max-w-6xl mx-auto px-8 mt-8 md:mt-12">
+    <h2 class="text-3xl font-semibold mb-2">Articles</h2>
+    <Posts posts={posts} />
+  </div>
   <!-- {posts.length > 0 && <HomePagination />} -->
 </Base>
