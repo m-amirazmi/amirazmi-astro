@@ -6,4 +6,5 @@ heroImage: "/images/blog/react-vs-vue-local-component-state.svg"
 category: ""
 tags: []
 author: "Muhamad Amir Azmi"
+coverColor: "#FDF4FF"
 ---

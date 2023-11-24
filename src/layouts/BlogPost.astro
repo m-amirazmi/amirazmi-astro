@@ -10,7 +10,7 @@ import { slugify } from '@utils/slug';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, heroImage, category, tags } = Astro.props;
+const { title, description, pubDate, heroImage, category, tags, coverColor } = Astro.props;
 ---
 
 <style is:global>
@@ -20,10 +20,10 @@ const { title, description, pubDate, heroImage, category, tags } = Astro.props;
 </style>
 <Base meta_title={title} description={description} image={heroImage} blogpost>
   <article class="mx-auto w-full max-w-6xl px-4">
-    <div class="mb-8 flex items-center justify-center">
+    <div class="mb-8 flex items-center justify-center bg-[]" style={{backgroundColor:coverColor}}>
       {
         heroImage && (
-          <figure class="w-12/12 h-auto overflow-hidden rounded-xl object-cover">
+          <figure class="w-12/12 md:w-6/12 h-auto overflow-hidden rounded-xl object-cover">
             <Image
               class="cursor-progress transition duration-300 ease-in-out hover:scale-110"
               src={heroImage}

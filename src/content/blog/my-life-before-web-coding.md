@@ -5,5 +5,6 @@ pubDate: "2023-11-09T18:22:35.849Z"
 heroImage: "/images/blog/my-life-before-web-coding.webp"
 category: "inspiration"
 tags: ["html", "css", "javascript"]
+coverColor: "#ECFDF5"
 author: "Muhamad Amir Azmi"
 ---

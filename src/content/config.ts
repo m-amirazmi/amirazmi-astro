@@ -9,7 +9,8 @@ const blog = defineCollection({
     heroImage: z.string().optional(),
     category: z.string().default('tutorial'),
     tags: z.array(z.string()).default(['others']),
-    authors: z.string().default('Muhamad Amir'),
+    author: z.string().default('Muhamad Amir'),
+    coverColor: z.string().optional()
   }),
 });
 
