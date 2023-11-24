@@ -23,7 +23,7 @@ type PostType = {
 };
 ---
 
-<div class="mx-auto grid grid-cols-1 gap-x-4 gap-y-12 md:grid-cols-2 md:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+<div class="mx-auto grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 md:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
   {
     posts?.slice(0, config.site.pageSize).map(({ data, slug }: PostType) => (
       <article class="flex w-full cursor-pointer flex-col items-start">
@@ -56,15 +56,15 @@ type PostType = {
           <FormattedDate date={data.pubDate} />
         </div>
         <div class="relative">
-          <h2 class="mt-3 text-xl font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600 dark:text-white">
+          <h2 class="mt-2 text-xl font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600 dark:text-white">
             <a href={`/blog/${slug}/`}>{data.title}</a>
           </h2>
           <p class="mt-2 line-clamp-3 leading-6 text-zinc-600">{data.description}</p>
         </div>
         {data.tags && data.tags.length > 0 && (
-          <div class="mt-3 flex gap-2 text-zinc-600">
+          <div class="mt-2 flex gap-2 text-zinc-600">
             {data.tags.map((tag) => (
-              <div class="rounded bg-teal-600 px-2 py-0.5 text-sm text-white">
+              <div class="rounded border border-teal-700 px-2 py-0.5 text-sm text-teal-700 hover:bg-teal-100 font-medium">
                 <a href={`/blog?tag=${slugify(tag)}`}>{tag}</a>
               </div>
             ))}

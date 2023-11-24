@@ -76,5 +76,14 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 body {
+  font-family: 'Inter Variable', sans-serif;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
   font-family: 'Jost Variable', sans-serif;
 }
