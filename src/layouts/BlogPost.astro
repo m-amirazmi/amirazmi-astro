@@ -58,9 +58,9 @@ const { title, description, pubDate, heroImage, category, tags, coverColor } = A
           <CalendarIcon />
           <FormattedDate date={pubDate} />
         </div>
-        <div class="mx-3 mt-2 flex flex-wrap items-center font-medium">
+        <div class="mx-3 mt-2 flex flex-wrap items-center font-medium hover:bg-teal-200 px-4 py-1.5 rounded-lg bg-teal-100">
           <CategoryIcon />
-          <a href={`/category/${slugify(category)}`} class="hover:text-primary mr-2 font-medium capitalize">
+          <a href={`/category/${slugify(category)}`} class="hover:text-primary font-medium capitalize text-zinc-800 ">
             {category}
           </a>
         </div>
@@ -74,9 +74,9 @@ const { title, description, pubDate, heroImage, category, tags, coverColor } = A
         tags?.map((tag) => (
           <a
             href={`/tags/${slugify(tag)}`}
-            class="mb-2 mr-2 inline-block rounded-full bg-zinc-200 px-3 py-1 text-sm font-semibold capitalize text-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
+            class="mb-2 mr-2 inline-block rounded border border-teal-700 px-2 py-0.5 text-sm text-teal-700 hover:bg-teal-100 font-medium"
           >
-            #{tag}
+            {tag}
           </a>
         ))
       }
