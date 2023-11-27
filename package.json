@@ -1,31 +1,13 @@
 {
-  "name": "ev0-astro-theme",
-  "version": "1.1.3",
-  "description": "EV0 is a free and open-source serverless blog template, built with Astro, Tailwind CSS, and TypeScript.",
+  "name": "amirazmi",
+  "version": "1.0",
+  "description": "A Frontend Developer with 4 years of professional experiences in various industries using ReactJS and NextJS.",
   "license": "MIT",
   "private": true,
   "author": {
-    "name": "GNDX"
+    "name": "Muhamad Amir"
   },
-  "homepage": "https://ev0.gndx.io",
-  "contributors": [
-    {
-      "name": "Oscar Barajas @gndx",
-      "email": "oscar@gndx.dev",
-      "url": "https://gndx.dev"
-    }
-  ],
-  "keywords": [
-    "JavaScript",
-    "Astro",
-    "react",
-    "tailwindcss",
-    "typescript"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gndx/ev0-astro-theme.dev.git"
-  },
+  "homepage": "https://amirazmi.dev",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
