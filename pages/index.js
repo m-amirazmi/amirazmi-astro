@@ -11,12 +11,12 @@ export default function Blog({ posts }) {
           key={slug}
           className="border border-gray-200 m-2 rounded-xl shadow-lg overflow-hidden flex flex-col"
         >
-          <Link href={`/post/${slug}`}>
+          <Link href={`/blog/${slug}`}>
             <Image
               width={650}
               height={340}
               alt={frontmatter.title}
-              src={`/${frontmatter.socialImage}`}
+              src={`/${frontmatter.heroImage}`}
             />
 
             <h1 className="p-4">{frontmatter.title}</h1>
