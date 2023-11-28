@@ -1,30 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import { Button } from "@/components/ui/button";
-import BlogLayout from "@/layouts/blog-layout.astro";
+import Layout from "@/layouts/layout.astro";
+import PostList from "@/components/post-list";
+import PageTitle from "@/components/page-title";
+import type { IPost } from "@/lib/types";
 const posts = await Astro.glob("../../pages/**/*.mdx");
+const postsFrontmatter: IPost[] = posts.map((i)=> i.frontmatter as IPost)
 ---
 
-<BlogLayout title="Blog">
-  <Button>Click here</Button>
-  <section>
-    <div>
-      <ul>
-        {
-          posts.map((post) => (
-            <li>
-              <a href={`/blog/${post.frontmatter.slug}`}>
-                <Image
-                  src={post.frontmatter.image}
-                  width={500}
-                  height={500}
-                  alt={post.frontmatter.title}
-                />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
-</BlogLayout>
+<Layout title="Blog">
+  <PageTitle title="Blog"/>
+  <PostList posts={postsFrontmatter}/>
+</Layout>
