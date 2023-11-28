@@ -1,16 +1,17 @@
 ---
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import BaseHead from "../components/base-head.astro";
+import BaseHead from "@/components/base-head";
 
 const {
   frontmatter: { title, description, pubDate, image, author },
 } = Astro.props;
+const generator = Astro.generator
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} generator={generator} />
   </head>
   <body class="flex flex-col items-start min-h-screen">
     <Header />
