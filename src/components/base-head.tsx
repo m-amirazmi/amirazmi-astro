@@ -8,7 +8,11 @@ interface IProps {
   generator?: string;
 }
 
-const BaseHead: React.FC<IProps> = ({ title, description, generator }) => {
+const BaseHead: React.FC<IProps> = ({
+  title,
+  description = "Welcome to amirazmi.dev. Here can learn more about me and what I have been doing in the frontend development space.",
+  generator,
+}) => {
   return (
     <>
       <meta charSet="utf-8" />

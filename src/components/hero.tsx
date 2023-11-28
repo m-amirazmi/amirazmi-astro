@@ -11,7 +11,7 @@ const Hero: React.FC<IProps> = () => {
             <h1 className="mb-0 md:mb-2 text-3xl font-semibold text-zinc-700 dark:text-white md:text-5xl">
               Muhamad Amir Azmi
             </h1>
-            <h3 className="text-2xl mb-2 font-medium">Frontend Developer</h3>
+            <p className="text-2xl mb-2 font-medium">Frontend Developer</p>
             <p className="hidden md:block text-base max-w-lg text-zinc-500 dark:text-zinc-400">
               A
               <span className="underline font-semibold text-teal-700 mx-1">

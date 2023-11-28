@@ -9,6 +9,7 @@ const SocialIcons: React.FC<IProps> = () => {
         className="block h-7 w-7 text-zinc-500 hover:text-teal-700 md:h-8 md:w-8"
         href="https://www.linkedin.com/in/m-amirazmi/"
         target="_blank"
+        aria-label="linkedin"
       >
         <Linkedin />
       </a>
@@ -16,6 +17,7 @@ const SocialIcons: React.FC<IProps> = () => {
         className="block h-7 w-7 text-zinc-500 hover:text-teal-700 md:h-8 md:w-8"
         href="https://github.com/m-amirazmi"
         target="_blank"
+        aria-label="github"
       >
         <Github />
       </a>
@@ -23,6 +25,7 @@ const SocialIcons: React.FC<IProps> = () => {
         className="block h-7 w-7 text-zinc-500 hover:text-teal-700 md:h-8 md:w-8"
         href="mailto:m.amirazmi@hotmail.com"
         target="_blank"
+        aria-label="email"
       >
         <Mail />
       </a>

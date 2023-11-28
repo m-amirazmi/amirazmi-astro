@@ -1,6 +1,5 @@
 import type { IPost } from "@/lib/types";
 import { dateFormat, slugify } from "@/lib/utils";
-import Date from "./date";
 
 interface IProps extends IPost {}
 
