@@ -1,0 +1,27 @@
+---
+import { Home } from "lucide-react";
+---
+
+<header class="w-full">
+  <nav class="flex items-center max-w-6xl p-4 mx-auto">
+    <a href="/" class="flex gap-1">
+      <span class="logo text-4xl font-semibold tracking-wider">AA</span>
+      <span
+        class="h-2 w-2 bg-primary rounded-full animate-bounce self-end mb-[6px]"
+      ></span>
+    </a>
+    <div class="ml-auto flex items-center gap-6">
+      <a href="/" class="text-muted-foreground hover:text-primary">
+        <Home size={18} />
+      </a>
+      <a
+        class="font-medium text-muted-foreground hover:text-primary"
+        href="/blog">Blog</a
+      >
+      <a
+        class="font-medium text-muted-foreground hover:text-primary"
+        href="/contact">Contact</a
+      >
+    </div>
+  </nav>
+</header>

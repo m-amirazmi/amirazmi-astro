@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import { Button } from "@/components/ui/button";
+import BlogLayout from "@/layouts/BlogLayout.astro";
+const posts = await Astro.glob("../../pages/**/*.mdx");
+---
+
+<BlogLayout title="Blog">
+  <Button>Click here</Button>
+  <section>
+    <div>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.frontmatter.slug}`}>
+                <Image
+                  src={post.frontmatter.image}
+                  width={500}
+                  height={500}
+                  alt={post.frontmatter.title}
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BlogLayout>
