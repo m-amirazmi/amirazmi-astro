@@ -62,6 +62,7 @@ const PostArticle: React.FC<IProps> = ({
       <div className="mt-8">
         {tags?.map((tag) => (
           <a
+            key={tag}
             href={`/tags/${slugify(tag)}`}
             className="mb-2 mr-2 inline-block rounded border border-teal-700 px-2 py-0.5 text-sm text-teal-700 hover:bg-teal-100 font-medium"
           >

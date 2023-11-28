@@ -7,7 +7,7 @@ const posts = await Astro.glob("../pages/**/*.mdx");
 const postsFrontmatter: IPost[] = posts.map((i)=> i.frontmatter as IPost)
 ---
 
-<Layout title="Try here">
+<Layout title="Welcome to my personal space!">
   <Hero/>
   <PostList title="All Articles" posts={postsFrontmatter}/>
 </Layout>
