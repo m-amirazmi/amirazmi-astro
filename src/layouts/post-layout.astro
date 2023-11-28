@@ -2,11 +2,29 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import BaseHead from "@/components/base-head";
+import type { IPost } from "@/lib/types";
+import { Image } from "astro:assets";
+import { Bookmark, Calendar } from "lucide-react";
+import { dateFormat, slugify } from "@/lib/utils";
+
+interface IPostLayout {
+  frontmatter: IPost;
+}
 
 const {
-  frontmatter: { title, description, pubDate, image, author },
-} = Astro.props;
-const generator = Astro.generator
+  frontmatter: {
+    title,
+    description,
+    pubDate,
+    image,
+    author,
+    category,
+    coverColor,
+    tags,
+    slug,
+  },
+} = Astro.props as IPostLayout;
+const generator = Astro.generator;
 ---
 
 <html lang="en">
@@ -15,16 +33,57 @@ const generator = Astro.generator
   </head>
   <body class="flex flex-col items-start min-h-screen">
     <Header />
-    <main>
-      <article>
-        <div class="article-head">
-          <h1 class="title">{title}</h1>
-          <em>Written by: {author}</em>
+    <main class="w-full">
+      <article class="max-w-6xl mx-auto px-4">
+        <div
+          class="mb-8 flex items-center justify-center rounded-xl"
+          style={{ backgroundColor: coverColor }}
+        >
+          {
+            image && (
+              <figure class="w-12/12 md:w-6/12 h-auto overflow-hidden rounded-xl object-cover">
+                <Image
+                  src={image}
+                  alt={title}
+                  width={1600}
+                  height={900}
+                  decoding="async"
+                  loading="lazy"
+                />
+              </figure>
+            )
+          }
         </div>
-        <div class="article-body">
-          {image && <img width={720} height={360} src={image} alt="" />}
-           Published on: {pubDate && <time>{pubDate}</time>}
-          <hr />
+        <div class="md:col-10 mb-12 text-center">
+          <h1 class="text-2xl font-bold md:text-4xl">{title}</h1>
+          <div class="text-text mt-4 flex flex-wrap items-center justify-center text-zinc-800 dark:text-zinc-200">
+            <div class="mx-3 mt-2 flex flex-wrap items-center font-medium">
+              <figure>
+                <Image
+                  alt="Muhamad Amir Azmi"
+                  class="mr-2 h-6 w-6 rounded-full"
+                  width={50}
+                  height={50}
+                  src="/images/hero.webp"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </figure>
+              <span>Muhamad Amir Azmi</span>
+            </div>
+            <div class="mx-3 mt-2 flex flex-wrap items-center font-medium gap-1">
+              <Calendar size={20}/>
+              <span>{dateFormat(pubDate)}</span>
+            </div>
+            <a href={`/category/${slugify(category)}`} class="mx-3 mt-2 flex flex-wrap items-center hover:bg-teal-200 pr-4 pl-3 py-1.5 rounded-lg bg-teal-100 gap-1 hover:text-primary font-medium capitalize text-zinc-800">
+              <Bookmark size={20}/>
+              <span>
+                {category}
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="article prose prose-lg prose-green min-w-full md:prose-xl">
           <slot />
         </div>
       </article>
