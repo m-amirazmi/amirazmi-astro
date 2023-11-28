@@ -1,10 +1,13 @@
 ---
 import Layout from "@/layouts/layout.astro";
-import { Button } from "@/components/ui/button";
 import Hero from "@/components/hero";
+import PostList from "@/components/post-list";
+import type { IPost } from "@/lib/types";
+const posts = await Astro.glob("../pages/**/*.mdx");
+const postsFrontmatter: IPost[] = posts.map((i)=> i.frontmatter as IPost)
 ---
 
 <Layout title="Try here">
   <Hero/>
-  <Button>Hello</Button>
+  <PostList posts={postsFrontmatter}/>
 </Layout>
