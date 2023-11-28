@@ -1,7 +1,7 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import BaseHead from "../components/base-head.astro";
 
 const {
   frontmatter: { title, description, pubDate, image, author },
@@ -12,7 +12,7 @@ const {
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body>
+  <body class="flex flex-col items-start min-h-screen">
     <Header />
     <main>
       <article>
@@ -28,8 +28,6 @@ const {
         </div>
       </article>
     </main>
-    <div class="footer-container">
-      <Footer />
-    </div>
+    <Footer />
   </body>
 </html>
