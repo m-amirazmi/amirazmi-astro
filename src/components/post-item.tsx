@@ -20,13 +20,7 @@ const PostItem: React.FC<IProps> = ({
         {image && (
           <a href={`/blog/${slug}/`}>
             <figure className="h-auto w-auto overflow-hidden rounded-lg object-cover">
-              <img
-                className="transition duration-300 ease-in-out hover:scale-110"
-                src={image}
-                alt={title}
-                width={960}
-                height={480}
-              />
+              <img src={image} alt={title} width={960} height={480} />
             </figure>
           </a>
         )}

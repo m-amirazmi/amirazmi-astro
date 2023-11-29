@@ -1,0 +1,56 @@
+---
+layout: "@/layouts/post-layout.astro"
+title: "My Commonly Used React Hooks"
+description: "React hooks are the common way to interact with the component in various behaviour. Before React hooks being introduced, we are exposed with component lifecycle and component state with class based component. Now,  we can do the same thing with React hooks."
+pubDate: "1701258248000"
+image: "/images/blog/my-commonly-used-react-hooks.webp"
+category: "tutorial"
+tags: 
+  - "react"
+  - "javascript"
+  - "beginner"
+coverColor: "#F7FEE7"
+author: "Muhamad Amir Azmi"
+slug: "my-commonly-used-react-hooks"
+---
+
+React hooks are the common way to interact with the component in various behaviour. Before React hooks being introduced, we are exposed with component lifecycle and component state with class based component. Now,  we can do the same thing with React hooks.
+
+## From Official Docs
+
+There are a lot of React hooks that developer can used in React. Each hooks has its own functionality which makes developer life easier. For example, useState and useReducer makes the component state management easier instead of using var, let or const to hold our component state.
+
+In official docs also show us how to create our own custom hooks which can abstract away our component logic from our rendering component. Custom hooks also can contains built in React hooks.
+
+Can read more details on React hooks from the official documentation. Here I just want to share my most commonly used React hooks that I use everyday in every React project:
+
+- useState
+- useRef
+- useEffect
+
+## useState - Handle Component State
+
+In every React app that I have built, there is always a need to track and keep state or data changes within the component. With useState, instead of keeping the state with var, let and const which not a good thing to do in React, I will use useState. There are few ways of using useState.
+
+1. For toggle - modal, popup, hide/show
+2. Form input data store
+3. Previous, current and future state
+4. Array or object organization
+
+### Toggle
+
+…
+
+### Form Input Data Store
+
+…
+
+### Previous, Current and Future State
+
+…
+
+### useState Gotcha - Remember This
+
+Each time the state changes, the component will be rerender. Make sure to use useState when neccessery and component rerender is needed. This is because, when component is rerender due to state change, some of things might not work well. CSS animation for example, one of things that I always encounter is that, the animation does not work well because some of the JSX depending on state to hide and show.
+
+This can be demonstrate with building simple popup modal with some ease in out animation. If the modal JSX depends on toggle state directly, it will just show and hide without any animation due to the missing HTML element inside HTML DOM.
