@@ -17,7 +17,7 @@ const BaseHead: React.FC<IProps> = ({
   image,
   pageUrl = "https://amirazmi.dev",
 }) => {
-  const imageUrl = "https://amirazmi.dev" + image;
+  const imageUrl = "https://amirazmi.dev" + image + "?v=1";
   return (
     <>
       <meta charSet="utf-8" />
