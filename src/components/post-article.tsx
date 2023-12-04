@@ -63,6 +63,9 @@ const PostArticle: React.FC<IProps> = ({
       prose-green 
       min-w-full 
       md:prose-xl 
+      prose-code:text-primary
+      prose-code:bg-primary/5
+      prose-code:font-semibold
       `}
       >
         {children}
