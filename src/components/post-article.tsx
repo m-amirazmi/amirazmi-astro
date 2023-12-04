@@ -49,14 +49,22 @@ const PostArticle: React.FC<IProps> = ({
           </div>
           <a
             href={`/category/${slugify(category)}`}
-            className="mx-3 mt-2 flex flex-wrap items-center hover:bg-teal-200 pr-4 pl-3 py-1.5 rounded-lg bg-teal-100 gap-1 hover:text-primary font-medium capitalize text-zinc-800"
+            className="mx-3 mt-2 flex flex-wrap items-center hover:bg-teal-200 px-3 py-1.5 rounded-lg bg-teal-100 gap-1 hover:text-primary font-medium capitalize text-zinc-800"
           >
-            <Bookmark size={20} />
             <span>{category}</span>
           </a>
         </div>
       </div>
-      <div className="article prose prose-lg prose-green min-w-full md:prose-xl">
+      <div
+        className={`
+      article 
+      prose 
+      prose-lg 
+      prose-green 
+      min-w-full 
+      md:prose-xl 
+      `}
+      >
         {children}
       </div>
       <div className="mt-8">
