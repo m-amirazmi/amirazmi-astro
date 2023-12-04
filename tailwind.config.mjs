@@ -76,8 +76,8 @@ module.exports = {
                 content: "none",
               },
               code: {
-                color: theme("colors.slate.500"),
-                backgroundColor: theme("colors.stone.100"),
+                color: "hsl(var(--primary))",
+                backgroundColor: "hsla(175, 77.4%, 26.1%, 0.05)",
                 borderRadius: theme("borderRadius.DEFAULT"),
                 paddingLeft: theme("spacing[1.5]"),
                 paddingRight: theme("spacing[1.5]"),
