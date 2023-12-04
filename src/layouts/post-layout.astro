@@ -22,6 +22,8 @@ const generator = Astro.generator;
       title={frontmatter.title}
       description={frontmatter.description}
       generator={generator}
+      image={frontmatter.image}
+      pageUrl={`https://amirazmi.dev/blog/${frontmatter.slug}`}
     />
   </head>
   <body class="flex flex-col items-start min-h-screen">
