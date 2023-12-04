@@ -24,21 +24,21 @@ In official docs also show us how to create our own custom hooks which can abstr
 
 Can read more details on React hooks from the [official documentation](https://react.dev/). Here I just want to share my most commonly used React hooks that I use everyday in every React project:
 
-- [`useState`](#`useState`)
-- [`useRef`](#`useRef`)
-- [`useEffect`](#`useEffect`)
+- [`useState`](#usestate)
+- [`useRef`](#useref)
+- [`useEffect`](#useeffect)
 
-    <a name="`useState`"></a>
+    <a name="usestate"></a>
 ## `useState` - Handle Component State
 
 In every React app that I have built, there is always a need to track and keep state or data changes within the component. With `useState`, instead of keeping the state with `var`, `let` and `const` which not a good thing to do in React, I will use `useState`. There are few ways of using `useState`.
 
-1. [For toggle - modal, popup, hide/show](#`useState`-toggle)
-2. Form input data store
+1. [For toggle - modal, popup, hide/show](#usestate-toggle)
+2. [Form input data store](#usestate-form-input)
 3. Previous, current and future state
 4. Array or object organization
 
-    <a name="`useState`-toggle"></a>
+    <a name="usestate-toggle"></a>
 ### Toggle
 
 The most common usage of `useState` is use as toggle. We can create a state which holds boolean value either `true` or `false` and conditionally renders the component depends on the state boolean value.
@@ -116,6 +116,7 @@ After quite some time, the data state updated and the loading state changed to f
 
 These are two quick example how to use `useState` as toggle state. There are a lot of situation where we might need to use two to five toggle state in one component depends on how complicated the component is.
 
+    <a name="usestate-form-input"></a>
 ### Form Input Data Store
 
 …
