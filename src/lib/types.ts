@@ -8,4 +8,5 @@ export interface IPost {
   coverColor: string;
   author?: string;
   slug?: string;
+  deactivate: boolean;
 }

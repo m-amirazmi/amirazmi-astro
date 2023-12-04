@@ -1,8 +1,9 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
- 
+import type { IPost } from "./types";
+
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export const slugify = (text: string): string => {
@@ -37,4 +38,13 @@ export const dateFormat = (datetime: string): string => {
   const month = monthList[newDate.getMonth()];
   const year = newDate.getFullYear();
   return `${day} ${month} ${year}`;
+};
+
+export const filterAndSortedPostList = (posts: IPost[], length = 0) => {
+  const removeDeactivated = posts.filter((i) => !i.deactivate);
+  const sortedByLatest = removeDeactivated.sort(
+    (a, b) => +b.pubDate - +a.pubDate
+  );
+  if (length > 0) return sortedByLatest.slice(0, length);
+  return sortedByLatest;
 };
