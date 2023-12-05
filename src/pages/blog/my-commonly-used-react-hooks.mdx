@@ -124,8 +124,26 @@ In any web application, there must have some sort of form input component such a
 ```jsx
 const [input, setInput] = useState({})
 
-return
+const handleChange = (e) => {
+  setInput([e.target.name]: e.target.value)
+}
+
+const handleSubmit = async () => {
+  await fetch(..., {
+    method: 'POST',
+    data: input
+  })
+}
+
+return (
+  <form onSubmit={handleSubmit}>
+    <input name="name" type="text" onChange={handleChange}/>
+    <button>Submit</button>
+  </form>
+)
 ```
+
+The input state above will be updated each time user insert any text input into input field through `onChange` handler. 
 
 ### Previous, Current and Future State
 
