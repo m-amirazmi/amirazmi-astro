@@ -149,7 +149,18 @@ Then, when user click the submit button, the `handleSubmit` will trigger and sub
 
 ### Store Manipulated Data
 
-…
+When we loop an array, either through component props or fetching the data from external API, we always need to manipulated the item in the array to make sure we only store the data that we need.
+
+For example, the item in the array do not have a slug or an id after do the data fetching. We cannot simply loop over the array if our `JSX` template need slug and id to work well. So, we need to do data manipulation either in `useEffect` or after do the data fetching and store a new array in a state using `useState`.
+
+```jsx
+const [data, setData] = useState()
+
+if(!data) return null
+return (
+  <div>{data.map((item, k)=><div key={k}>{item.id}</div>)}</div>
+)
+```
 
 ### `useState` Gotcha - Remember This
 
