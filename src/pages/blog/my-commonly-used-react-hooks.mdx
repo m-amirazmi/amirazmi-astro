@@ -156,11 +156,27 @@ For example, the item in the array do not have a slug or an id after do the data
 ```jsx
 const [data, setData] = useState()
 
+useEffect(()=>{
+  const fetchData = async () => {
+    const res = await fetch(...)
+    const newData = res.map((item) => {
+      const i = item
+      i.id = Math.random()
+      return i
+    })
+    setData(newData)
+  }
+},[])
+
 if(!data) return null
 return (
-  <div>{data.map((item, k)=><div key={k}>{item.id}</div>)}</div>
+  <div>{data.map((item, k) => <div key={k}>{item.id}</div>)}</div>
 )
 ```
+
+From the example above, on component load, inside the `useEffect`, the data has been fetched and it seem the fetched data do not have `id` property which will be needed inside the `JSX`. So, the response from the fetched data will be mapped over and add additional `id` property.
+
+After that, the `newData` returned by map loop will be used to update the `data` state through `setData` function. This is one of the example how we can use `useState` to store our manipulated data.
 
 ### `useState` Gotcha - Remember This
 
