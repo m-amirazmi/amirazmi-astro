@@ -35,8 +35,7 @@ In every React app that I have built, there is always a need to track and keep s
 
 1. [For toggle - modal, popup, hide/show](#usestate-toggle)
 2. [Form input data store](#usestate-form-input)
-3. Previous, current and future state
-4. Array or object organization
+3. [Store manipulated data](#usestate-store-data)
 
     <a name="usestate-toggle"></a>
 ### Toggle
@@ -147,6 +146,7 @@ The input state above will be updated each time user insert any text input into 
 
 Then, when user click the submit button, the `handleSubmit` will trigger and submit the input to the `fetch` or any third party API. This is simple example how we can use `useState` to store our input data before being process and passed to API. Usually, the input state may have 3 to 5 different key value pairs which the values are coming from the input fields.
 
+<a name="usestate-store-data"></a>
 ### Store Manipulated Data
 
 When we loop an array, either through component props or fetching the data from external API, we always need to manipulated the item in the array to make sure we only store the data that we need.
