@@ -15,7 +15,7 @@ const Hero: React.FC<IProps> = () => {
             <p className="hidden md:block text-base max-w-lg text-zinc-500 dark:text-zinc-400">
               A
               <span className="underline font-semibold text-teal-700 mx-1">
-                Frontend Developer
+                Software Developer
               </span>
               with 4 years of professional experiences in various industries
               using ReactJS and NextJS.
